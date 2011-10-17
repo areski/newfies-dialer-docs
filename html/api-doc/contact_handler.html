@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>contactHandler &mdash; Newfies v0.1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies v0.1.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="next" title="bulkcontactHandler" href="bulkcontact_handler.html" />
+    <link rel="prev" title="phonebookHandler" href="phonebook_handler.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="bulkcontact_handler.html" title="bulkcontactHandler"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="phonebook_handler.html" title="phonebookHandler"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies v0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-dialer_campaign.api.handlers"></span><div class="section" id="contacthandler">
+<span id="contacthandler-model"></span><h1><a class="reference internal" href="#dialer_campaign.api.handlers.contactHandler" title="dialer_campaign.api.handlers.contactHandler"><tt class="xref py py-class docutils literal"><span class="pre">contactHandler</span></tt></a><a class="headerlink" href="#contacthandler" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="dialer_campaign.api.handlers.contactHandler">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.api.handlers.</tt><tt class="descname">contactHandler</tt><a class="headerlink" href="#dialer_campaign.api.handlers.contactHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>This API provides as Contact management, giving basic function
+to create, read and update contacts.</p>
+</dd></dl>
+
+<div class="section" id="create">
+<span id="create-contact"></span><h2><tt class="xref py py-class docutils literal"><span class="pre">create</span></tt><a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><tt class="descclassname">dialer_campaign.api.handlers.</tt><tt class="descname">contactHandler</tt></dt>
+<dd><dl class="method">
+<dt id="dialer_campaign.api.handlers.contactHandler.create">
+<tt class="descname">create</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.api.handlers.contactHandler.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to create a new contact</p>
+<p><strong>Attributes Details</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">contact</span></tt> - contact number of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">last_name</span></tt> - last name of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">first_name</span></tt> - first name of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">email</span></tt> - email id of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">description</span></tt> - Short description of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">additional_vars</span></tt> - Additional settings for the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">phonebook_id</span></tt> - the phonebook Id to which we want to add            the Subscriber</li>
+</ul>
+</div></blockquote>
+<p><strong>CURL Usage</strong>:</p>
+<div class="highlight-python"><pre>curl -u username:password -i -H "Accept: application/json" -X POST http://127.0.0.1:8000/api/dialer_campaign/contact/ -d "contact=650784355&amp;last_name=belaid&amp;first_name=areski&amp;email=areski@gmail.com&amp;phonebook_id=1"</pre>
+</div>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">&quot;contact&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-05-09 02:16:29&quot;</span><span class="p">,</span>
+        <span class="s">&quot;last_name&quot;</span><span class="p">:</span> <span class="s">&quot;belaid&quot;</span><span class="p">,</span>
+        <span class="s">&quot;first_name&quot;</span><span class="p">:</span> <span class="s">&quot;areski&quot;</span><span class="p">,</span>
+        <span class="s">&quot;email&quot;</span><span class="p">:</span> <span class="s">&quot;areski@gmail.com&quot;</span><span class="p">,</span>
+        <span class="s">&quot;additional_vars&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;phonebook&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_Phonebook&quot;</span><span class="p">,</span>
+            <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;This is default phone book&quot;</span>
+        <span class="p">},</span>
+        <span class="s">&quot;contact&quot;</span><span class="p">:</span> <span class="s">&quot;650784355&quot;</span><span class="p">,</span>
+        <span class="s">&quot;created_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-05-09 02:16:29&quot;</span><span class="p">,</span>
+        <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="n">null</span>
+    <span class="p">},</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Error</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>You have too many contacts per campaign.
+You are allowed a maximum of xxx</li>
+<li>The PhoneBook ID doesn&#8217;t exist!</li>
+<li>The contact duplicated xxxxxxxxxxxxx</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="read">
+<span id="read-contact"></span><h2><tt class="xref py py-class docutils literal"><span class="pre">read</span></tt><a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><tt class="descclassname">dialer_campaign.api.handlers.</tt><tt class="descname">contactHandler</tt></dt>
+<dd><dl class="method">
+<dt id="dialer_campaign.api.handlers.contactHandler.read">
+<tt class="descname">read</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.api.handlers.contactHandler.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to read all pending contacts, or a specific contact if         a contact_id is supplied</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">campaign_id</span></tt> - Campaign ID</li>
+<li><tt class="docutils literal"><span class="pre">contact</span></tt> - contact number of the subscriber</li>
+</ul>
+</div></blockquote>
+<p><strong>CURL Usage</strong>:</p>
+<div class="highlight-python"><pre>curl -u username:password -i -H "Accept: application/json" -X GET http://127.0.0.1:8000/api/dialer_campaign/contact/%campaign_id%/
+
+curl -u username:password -i -H "Accept: application/json" -X GET http://127.0.0.1:8000/api/dialer_campaign/contact/%campaign_id%/%contact%/</pre>
+</div>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;contact_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;last_attempt&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;count_attempt&quot;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;contact_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s">&quot;last_attempt&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;count_attempt&quot;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Error</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>No value for Campaign ID !</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="update">
+<span id="update-contact"></span><h2><tt class="xref py py-class docutils literal"><span class="pre">update</span></tt><a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><tt class="descclassname">dialer_campaign.api.handlers.</tt><tt class="descname">contactHandler</tt></dt>
+<dd><dl class="method">
+<dt id="dialer_campaign.api.handlers.contactHandler.update">
+<tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.api.handlers.contactHandler.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to update a contact</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">campaign_id</span></tt> - Campaign ID</li>
+<li><tt class="docutils literal"><span class="pre">contact</span></tt> - contact number of the subscriber</li>
+<li><tt class="docutils literal"><span class="pre">status</span></tt> - campaign subscriber status values (1:START,             2:PAUSE, 3:ABORT, 4:FAIL, 5:COMPLETE)</li>
+</ul>
+</div></blockquote>
+<p><strong>CURL Usage</strong>:</p>
+<div class="highlight-python"><pre>curl -u username:password -i -H "Accept: application/json" -X PUT http://127.0.0.1:8000/api/dialer_campaign/contact/%campagin_id%/%contact%/ -d "status=2"</pre>
+</div>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;contact&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-04-29 08:44:26&quot;</span><span class="p">,</span>
+        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Belaid Arezqui&quot;</span><span class="p">,</span>
+        <span class="s">&quot;additional_vars&quot;</span><span class="p">:</span> <span class="s">&quot;amount=1&quot;</span><span class="p">,</span>
+        <span class="s">&quot;phonebook&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_Phonebook&quot;</span><span class="p">,</span>
+            <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;This is default phone book&quot;</span>
+        <span class="p">},</span>
+        <span class="s">&quot;contact&quot;</span><span class="p">:</span> <span class="s">&quot;650784355&quot;</span><span class="p">,</span>
+        <span class="s">&quot;created_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-04-29 08:44:26&quot;</span><span class="p">,</span>
+        <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;Happy customer&quot;</span>
+    <span class="p">},</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Error</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>CampaignSubscriber is not found</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">contactHandler</span></tt></a><ul>
+<li><a class="reference internal" href="#create"><tt class="docutils literal"><span class="pre">create</span></tt></a></li>
+<li><a class="reference internal" href="#read"><tt class="docutils literal"><span class="pre">read</span></tt></a></li>
+<li><a class="reference internal" href="#update"><tt class="docutils literal"><span class="pre">update</span></tt></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="phonebook_handler.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">phonebookHandler</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="bulkcontact_handler.html"
+                        title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">bulkcontactHandler</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api-doc/contact_handler.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="bulkcontact_handler.html" title="bulkcontactHandler"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="phonebook_handler.html" title="phonebookHandler"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies v0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

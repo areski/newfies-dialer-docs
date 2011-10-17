@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cdrHandler &mdash; Newfies v0.1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies v0.1.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="next" title="CampaignResource" href="campaign_resource.html" />
+    <link rel="prev" title="callrequestHandler" href="callrequest_handler.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="campaign_resource.html" title="CampaignResource"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="callrequest_handler.html" title="callrequestHandler"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies v0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-dialer_cdr.api.handlers"></span><div class="section" id="cdrhandler">
+<span id="cdrhandler-model"></span><h1><a class="reference internal" href="#dialer_cdr.api.handlers.cdrHandler" title="dialer_cdr.api.handlers.cdrHandler"><tt class="xref py py-class docutils literal"><span class="pre">cdrHandler</span></tt></a><a class="headerlink" href="#cdrhandler" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="dialer_cdr.api.handlers.cdrHandler">
+<em class="property">class </em><tt class="descclassname">dialer_cdr.api.handlers.</tt><tt class="descname">cdrHandler</tt><a class="headerlink" href="#dialer_cdr.api.handlers.cdrHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>This API stores CDR and relevant information attached to it</p>
+</dd></dl>
+
+<div class="section" id="create">
+<span id="create-cdr"></span><h2><tt class="xref py py-class docutils literal"><span class="pre">create</span></tt><a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><tt class="descclassname">dialer_cdr.api.handlers.</tt><tt class="descname">cdrHandler</tt></dt>
+<dd><dl class="method">
+<dt id="dialer_cdr.api.handlers.cdrHandler.create">
+<tt class="descname">create</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_cdr.api.handlers.cdrHandler.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to store CDR</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">cdr</span></tt> - XML string assigned from the Telephony engine</li>
+</ul>
+</div></blockquote>
+<p><strong>CURL Usage</strong>:</p>
+<div class="highlight-python"><pre>curl -u username:password -i -H "Accept: application/json" -X POST http://127.0.0.1:8000/api/dialer_cdr/store_cdr/?uuid=48092924-856d-11e0-a586-0147ddac9d3e -d "cdr=thisismyxmlcdr"
+
+curl -u username:password -i -H "Accept: application/json" -X POST http://127.0.0.1:8000/api/dialer_cdr/store_cdr/ -d 'cdr=&lt;?xml version="1.0"?&gt;&lt;cdr&gt;&lt;other&gt;&lt;/other&gt;&lt;variables&gt;&lt;plivo_request_uuid&gt;7a641180-a742-11e0-b6b3-00231470a30c&lt;/plivo_request_uuid&gt;&lt;duration&gt;3&lt;/duration&gt;&lt;/variables&gt;&lt;notvariables&gt;&lt;plivo_request_uuid&gt;TESTc&lt;/plivo_request_uuid&gt;&lt;duration&gt;5&lt;/duration&gt;&lt;/notvariables&gt;&lt;/cdr&gt;'</pre>
+</div>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;phone_number&quot;</span><span class="p">:</span><span class="s">&quot;123456789&quot;</span><span class="p">,</span>
+  <span class="s">&quot;answersec&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+  <span class="s">&quot;callerid&quot;</span><span class="p">:</span><span class="s">&quot;8430954385&quot;</span><span class="p">,</span>
+  <span class="s">&quot;progresssec&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span>
+  <span class="s">&quot;callid&quot;</span><span class="p">:</span><span class="s">&quot;areski&quot;</span><span class="p">,</span>
+  <span class="s">&quot;request_uuid&quot;</span><span class="p">:</span><span class="s">&quot;d13c7314-a89e-11e0-964f-000c296bd875&quot;</span><span class="p">,</span>
+  <span class="s">&quot;used_gateway&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+  <span class="s">&quot;waitsec&quot;</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span>
+  <span class="s">&quot;hangup_cause_q850&quot;</span><span class="p">:</span><span class="s">&quot;thwarting &quot;</span><span class="p">,</span>
+  <span class="s">&quot;callrequest&quot;</span><span class="p">:</span><span class="mi">47</span><span class="p">,</span>
+  <span class="s">&quot;user&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+  <span class="s">&quot;disposition&quot;</span><span class="p">:</span><span class="s">&quot;ANSWER&quot;</span><span class="p">,</span>
+  <span class="s">&quot;duration&quot;</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span>
+  <span class="s">&quot;billsec&quot;</span><span class="p">:</span><span class="mi">55</span><span class="p">,</span>
+  <span class="s">&quot;starting_date&quot;</span><span class="p">:</span><span class="s">&quot;2011-07-07 08:58:52&quot;</span><span class="p">,</span>
+  <span class="s">&quot;hangup_cause&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+  <span class="s">&quot;dialcode&quot;</span><span class="p">:</span><span class="mi">34</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Error</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Timeout</li>
+<li>error get Callrequest xxx</li>
+<li>ValueError exception</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">cdrHandler</span></tt></a><ul>
+<li><a class="reference internal" href="#create"><tt class="docutils literal"><span class="pre">create</span></tt></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="callrequest_handler.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">callrequestHandler</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="campaign_resource.html"
+                        title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">CampaignResource</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api-doc/cdr_handler.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="campaign_resource.html" title="CampaignResource"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="callrequest_handler.html" title="callrequestHandler"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies v0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

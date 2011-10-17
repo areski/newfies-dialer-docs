@@ -1,0 +1,177 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CampaignSubscriberResource &mdash; Newfies v0.1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies v0.1.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="next" title="CallrequestResource" href="callrequest_resource.html" />
+    <link rel="prev" title="BulkContactResource" href="bulk_contact_resource.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="callrequest_resource.html" title="CallrequestResource"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="bulk_contact_resource.html" title="BulkContactResource"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies v0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-dialer_campaign.api.resources"></span><div class="section" id="campaignsubscriberresource">
+<span id="campaignsubscriberresource-model"></span><h1><a class="reference internal" href="#dialer_campaign.api.resources.CampaignSubscriberResource" title="dialer_campaign.api.resources.CampaignSubscriberResource"><tt class="xref py py-class docutils literal"><span class="pre">CampaignSubscriberResource</span></tt></a><a class="headerlink" href="#campaignsubscriberresource" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="dialer_campaign.api.resources.CampaignSubscriberResource">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.api.resources.</tt><tt class="descname">CampaignSubscriberResource</tt><big>(</big><em>api_name=None</em><big>)</big><a class="headerlink" href="#dialer_campaign.api.resources.CampaignSubscriberResource" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Attributes Details</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">contact</span></tt> - contact number of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">last_name</span></tt> - last name of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">first_name</span></tt> - first name of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">email</span></tt> - email id of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">description</span></tt> - Short description of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">additional_vars</span></tt> - Additional settings for the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">phonebook_id</span></tt> - the phonebook Id to which we want to add        the Subscriber</li>
+</ul>
+</div></blockquote>
+<p><strong>Validation</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>CampaignSubscriberValidation()</li>
+</ul>
+</div></blockquote>
+<p><strong>Create</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password --dump-header - -H "Content-Type:application/json" -X POST --data '{"contact": "650784355", "last_name": "belaid", "first_name": "areski", "email": "areski@gmail.com", "phonebook_id" : "1"}' http://localhost:8000/api/v1/campaignsubscriber/</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><pre>HTTP/1.0 204 NO CONTENT
+Date: Wed, 18 May 2011 13:23:14 GMT
+Server: WSGIServer/0.1 Python/2.6.2
+Vary: Authorization
+Content-Length: 0
+Content-Type: text/plain</pre>
+</div>
+</div></blockquote>
+<p><strong>Read</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password -H 'Accept: application/json' http://localhost:8000/api/v1/campaignsubscriber/?format=json</pre>
+</div>
+<p>Response:</p>
+</div></blockquote>
+<p><strong>Update</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password --dump-header - -H "Content-Type: application/json" -X PUT --data '{"status": "2", "contact": "123546"}' http://localhost:8000/api/v1/campaignsubscriber/%campaign_id%/</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><pre>HTTP/1.0 204 NO CONTENT
+Date: Fri, 23 Sep 2011 06:46:12 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Length: 0
+Content-Type: text/html; charset=utf-8
+Content-Language: en-us</pre>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="bulk_contact_resource.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">BulkContactResource</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="callrequest_resource.html"
+                        title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">CallrequestResource</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api-doc/campaign_subscriber_resource.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="callrequest_resource.html" title="CallrequestResource"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="bulk_contact_resource.html" title="BulkContactResource"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies v0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

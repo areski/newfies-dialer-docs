@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Admin Panel &mdash; Newfies v0.1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies v0.1.0 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="../user-guide.html" />
+    <link rel="next" title="Customer Panel" href="customer_panel.html" />
+    <link rel="prev" title="How to use Newfies-Dialer" href="how_to_use_it.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="customer_panel.html" title="Customer Panel"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="how_to_use_it.html" title="How to use Newfies-Dialer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies v0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../user-guide.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="admin-panel">
+<span id="id1"></span><h1>Admin Panel<a class="headerlink" href="#admin-panel" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://localhost:8000/admin/">http://localhost:8000/admin/</a></p>
+<p>This interface provides user (ACL) management, full control of all
+Campaigns, Phonebooks, Subscribers, Gateways and configuration of the
+Audio Application.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#screenshot-with-features" id="id2">Screenshot with Features</a></li>
+</ul>
+</div>
+<div class="section" id="screenshot-with-features">
+<span id="admin-screenshot-features"></span><h2><a class="toc-backref" href="#id2">Screenshot with Features</a><a class="headerlink" href="#screenshot-with-features" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dashboard">
+<h3>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Dashboard page for the admin interface after successful login with superuser credentials</p>
+<img alt="../_images/admin_screenshot.png" src="../_images/admin_screenshot.png" />
+</div>
+<div class="section" id="phonebook">
+<span id="admin-phonebook-access"></span><h3>Phonebook<a class="headerlink" href="#phonebook" title="Permalink to this headline">¶</a></h3>
+<p>The phonebook list will be displayed from the following URL. You can add a new
+phonebook by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">phonebook</span></tt> and adding the name of the phonebook and its
+description, Also from the phonebook list, click on the phonebook that you want
+to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_campaign/phonebook/">http://localhost:8000/admin/dialer_campaign/phonebook/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/phonebook_list.png" src="../_images/phonebook_list.png" style="width: 1000px;" />
+<p>To Add/Update phonebook for a user</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_campaign/phonebook/add/">http://localhost:8000/admin/dialer_campaign/phonebook/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_campaign/phonebook/1/">http://localhost:8000/admin/dialer_campaign/phonebook/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_phonebook.png" src="../_images/update_phonebook.png" style="width: 1000px;" />
+</div>
+<div class="section" id="contact">
+<span id="admin-contact-access"></span><h3>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h3>
+<p>The contact list will be displayed from the following URL and you can add a new contact
+by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">contact</span></tt> &amp; adding the contact details (i.e. phone number, name,
+description about contact, contact status) to one phonebook from the phonebook list.</p>
+<p>If the contact is active and the linked phonebook is also attached to a running campaign,
+then the contact will be added into campaign subscribers.</p>
+<p>From the contact list, click on the contact that you want to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_campaign/contact/">http://localhost:8000/admin/dialer_campaign/contact/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/contact_list.png" src="../_images/contact_list.png" style="width: 1000px;" />
+<p>To Add/Update a contact</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_campaign/contact/add/">http://localhost:8000/admin/dialer_campaign/contact/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_campaign/contact/1/">http://localhost:8000/admin/dialer_campaign/contact/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_contact.png" src="../_images/update_contact.png" style="width: 1000px;" />
+<p>To import bulk contacts into a phonebook, click on <tt class="docutils literal"><span class="pre">Import</span> <span class="pre">contacts</span></tt>.
+where you can upload the contacts via a CSV file in to one phonebook.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_campaign/contact/import_contact/">http://localhost:8000/admin/dialer_campaign/contact/import_contact/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/import_contact.png" src="../_images/import_contact.png" />
+</div>
+<div class="section" id="campaign">
+<span id="admin-campaign-access"></span><h3>Campaign<a class="headerlink" href="#campaign" title="Permalink to this headline">¶</a></h3>
+<p>The campaign list will be displayed from the following URL. You can add a new campaign
+by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">campaign</span></tt>. While adding a campaign, it is important to add campaign&#8217;s
+start and end dates with time &amp; week-day exceptions. Also select the gateway
+through which calls will be routed &amp; the phonebook(s) linked with contacts.</p>
+<p>From the campaign list, click on the campaign that you want to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_campaign/campaign/">http://localhost:8000/admin/dialer_campaign/campaign/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/campaign_list.png" src="../_images/campaign_list.png" style="width: 1000px;" />
+<p>To Add/Update Campaign for user</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_campaign/campaign/add/">http://localhost:8000/admin/dialer_campaign/campaign/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_campaign/campaign/1/">http://localhost:8000/admin/dialer_campaign/campaign/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_campaign.png" src="../_images/update_campaign.png" style="width: 1000px;" />
+</div>
+<div class="section" id="campaign-subscriber">
+<span id="admin-campaign-subscriber-access"></span><h3>Campaign Subscriber<a class="headerlink" href="#campaign-subscriber" title="Permalink to this headline">¶</a></h3>
+<p>The Campaign Subscriber list will be displayed from the following URL. You can add
+a new campaign subscriber by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">Campaign</span> <span class="pre">Subscriber</span></tt>. Also from the campaign
+subscriber list, click on the subscriber to update.</p>
+<p>While creating a contact, if its linked phonebook is also attached
+to a running campaign, then the contact will be added into the campaign subscriber.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_campaign/campaignsubscriber/">http://localhost:8000/admin/dialer_campaign/campaignsubscriber/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/campaignsubscriber_list.png" src="../_images/campaignsubscriber_list.png" style="width: 1000px;" />
+<p>To Add/Update Campaign Subscriber</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_campaign/campaignsubscriber/add/">http://localhost:8000/admin/dialer_campaign/campaignsubscriber/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_campaign/campaignsubscriber/1/">http://localhost:8000/admin/dialer_campaign/campaignsubscriber/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_campaignsubscriber.png" src="../_images/update_campaignsubscriber.png" style="width: 1000px;" />
+</div>
+<div class="section" id="dialer-settings">
+<span id="admin-dialer-settings-access"></span><h3>Dialer Settings<a class="headerlink" href="#dialer-settings" title="Permalink to this headline">¶</a></h3>
+<p>The dialer settings list will be displayed from the following URL. The Dialer settings
+list is applied to a system User. You can add a new setting by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">Dialer</span> <span class="pre">Settings</span></tt>
+and add numeric values for the limit. Also from the dialer settings list, click on
+the setting to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_settings/dialersetting/">http://localhost:8000/admin/dialer_settings/dialersetting/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/dialersetting_list.png" src="../_images/dialersetting_list.png" style="width: 1000px;" />
+<p>To Add/Update dialer settings for a Newfies-Dialer user</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_settings/dialersetting/add/">http://localhost:8000/admin/dialer_settings/dialersetting/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_settings/dialersetting/1/">http://localhost:8000/admin/dialer_settings/dialersetting/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_dialersetting.png" src="../_images/update_dialersetting.png" style="width: 1000px;" />
+<p>To apply dialer settings limit to a User, click on <tt class="docutils literal"><span class="pre">Customers</span></tt> or <tt class="docutils literal"><span class="pre">Admins</span></tt>,
+select the user to be updated &amp; apply settings from the dialer settings list.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/auth/staff/1/">http://localhost:8000/admin/auth/staff/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/apply_dialer_setting_to_user.png" src="../_images/apply_dialer_setting_to_user.png" style="width: 1000px;" />
+</div>
+<div class="section" id="dialer-gateway">
+<span id="admin-dialer-gateway-access"></span><h3>Dialer Gateway<a class="headerlink" href="#dialer-gateway" title="Permalink to this headline">¶</a></h3>
+<p>The Dialer Gateway list will be displayed from the following URL. You can add a new gateway
+by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">Dialer</span> <span class="pre">Gateway</span></tt> and adding the details (e.g. gateway name, hostname,
+protocol etc.). Also from the gateway list, click on the gateway that you want to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_gateway/gateway/">http://localhost:8000/admin/dialer_gateway/gateway/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/gateway_list.png" src="../_images/gateway_list.png" style="width: 1000px;" />
+<p>To Add/Update a dialer gateway</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_gateway/gateway/add/">http://localhost:8000/admin/dialer_gateway/gateway/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_gateway/gateway/1/">http://localhost:8000/admin/dialer_gateway/gateway/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_gateway.png" src="../_images/update_gateway.png" style="width: 1000px;" />
+</div>
+<div class="section" id="voip-application">
+<span id="admin-voip-app-access"></span><h3>VoIP Application<a class="headerlink" href="#voip-application" title="Permalink to this headline">¶</a></h3>
+<p>The VoIP application list will be displayed from the following URL. You can add a new
+application by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">VoIP</span> <span class="pre">Application</span></tt>. Also from the application list,
+click on the application to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/voip_app/voipapp/">http://localhost:8000/admin/voip_app/voipapp/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/voipapp_list.png" src="../_images/voipapp_list.png" style="width: 1000px;" />
+<p>To Add/Update a VoIP application</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/voip_app/voipapp/add/">http://localhost:8000/admin/voip_app/voipapp/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/admin/voip_app/voipapp/1/">http://localhost:8000/admin/voip_app/voipapp/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_voipapp.png" src="../_images/update_voipapp.png" style="width: 1000px;" />
+</div>
+<div class="section" id="call-request">
+<span id="admin-call-request-access"></span><h3>Call Request<a class="headerlink" href="#call-request" title="Permalink to this headline">¶</a></h3>
+<p>The call request list will be displayed from the following URL. You can add a
+new call request by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">Call</span> <span class="pre">Request</span></tt>. Also from the call request list,
+click on the request to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_cdr/callrequest/">http://localhost:8000/admin/dialer_cdr/callrequest/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/callrequest_list.png" src="../_images/callrequest_list.png" style="width: 1000px;" />
+<p>To Add/Update a Call Request</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_cdr/callrequest/add/">http://localhost:8000/admin/dialer_cdr/callrequest/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_cdr/callrequest/1/">http://localhost:8000/admin/dialer_cdr/callrequest/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_callrequest.png" src="../_images/update_callrequest.png" style="width: 1000px;" />
+</div>
+<div class="section" id="voip-call-report">
+<h3>VoIP Call Report<a class="headerlink" href="#voip-call-report" title="Permalink to this headline">¶</a></h3>
+<p>A VoIP Call list will be displayed from following URL. You <strong>can not</strong> add new call reports.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/admin/dialer_cdr/voipcall/">http://localhost:8000/admin/dialer_cdr/voipcall/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/voipcall_list.png" src="../_images/voipcall_list.png" style="width: 1000px;" />
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Admin Panel</a><ul>
+<li><a class="reference internal" href="#screenshot-with-features">Screenshot with Features</a><ul>
+<li><a class="reference internal" href="#dashboard">Dashboard</a></li>
+<li><a class="reference internal" href="#phonebook">Phonebook</a></li>
+<li><a class="reference internal" href="#contact">Contact</a></li>
+<li><a class="reference internal" href="#campaign">Campaign</a></li>
+<li><a class="reference internal" href="#campaign-subscriber">Campaign Subscriber</a></li>
+<li><a class="reference internal" href="#dialer-settings">Dialer Settings</a></li>
+<li><a class="reference internal" href="#dialer-gateway">Dialer Gateway</a></li>
+<li><a class="reference internal" href="#voip-application">VoIP Application</a></li>
+<li><a class="reference internal" href="#call-request">Call Request</a></li>
+<li><a class="reference internal" href="#voip-call-report">VoIP Call Report</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="how_to_use_it.html"
+                        title="previous chapter">How to use Newfies-Dialer</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="customer_panel.html"
+                        title="next chapter">Customer Panel</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/user-guide-doc/admin_panel.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="customer_panel.html" title="Customer Panel"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="how_to_use_it.html" title="How to use Newfies-Dialer"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies v0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../user-guide.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>
