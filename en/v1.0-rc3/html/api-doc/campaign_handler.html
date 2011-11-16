@@ -1,0 +1,487 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>campaignHandler &mdash; Newfies v0.1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies v0.1.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="next" title="campaignDeleteCascadeHandler" href="campaign_delete_cascade_handler.html" />
+    <link rel="prev" title="API Reference" href="../api-reference.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="campaign_delete_cascade_handler.html" title="campaignDeleteCascadeHandler"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../api-reference.html" title="API Reference"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies v0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-dialer_campaign.api.handlers"></span><div class="section" id="campaignhandler">
+<span id="campaignhandler-model"></span><h1><a class="reference internal" href="#dialer_campaign.api.handlers.campaignHandler" title="dialer_campaign.api.handlers.campaignHandler"><tt class="xref py py-class docutils literal"><span class="pre">campaignHandler</span></tt></a><a class="headerlink" href="#campaignhandler" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="dialer_campaign.api.handlers.campaignHandler">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.api.handlers.</tt><tt class="descname">campaignHandler</tt><a class="headerlink" href="#dialer_campaign.api.handlers.campaignHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>This API server provides Campaign management giving basic functions
+to create and update campaigns.</p>
+</dd></dl>
+
+<div class="section" id="create">
+<span id="create-campaign"></span><h2><tt class="xref py py-class docutils literal"><span class="pre">create</span></tt><a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><tt class="descclassname">dialer_campaign.api.handlers.</tt><tt class="descname">campaignHandler</tt></dt>
+<dd><dl class="method">
+<dt id="dialer_campaign.api.handlers.campaignHandler.create">
+<tt class="descname">create</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.api.handlers.campaignHandler.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to create a new campaign</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">campaign_code</span></tt> - Autogenerate campaign code</li>
+<li><tt class="docutils literal"><span class="pre">name</span></tt> - Name of the Campaign</li>
+<li><tt class="docutils literal"><span class="pre">description</span></tt> - Short description of the Campaign</li>
+<li><tt class="docutils literal"><span class="pre">callerid</span></tt> - Caller ID</li>
+<li><tt class="docutils literal"><span class="pre">startingdate</span></tt> - Start date. Epoch Time, ie 1301414368</li>
+<li><tt class="docutils literal"><span class="pre">expirationdate</span></tt> - Expiry date. Epoch Time, ie 1301414368</li>
+<li><tt class="docutils literal"><span class="pre">daily_start_time</span></tt> - Daily start time, default &#8216;00:00:00&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">daily_stop_time</span></tt> - Daily stop time, default &#8216;23:59:59&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">monday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">tuesday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">wednesday</span></tt> - Set to 1 if you want to run this day of the week            , default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">thursday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">friday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">saturday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">sunday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+</ul>
+</div></blockquote>
+<p><strong>Campaign Settings</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">frequency</span></tt> - Defines the frequency, speed of the campaign.                              This is the number of calls per minute.</li>
+<li><tt class="docutils literal"><span class="pre">callmaxduration</span></tt> - Maximum call duration.</li>
+<li><tt class="docutils literal"><span class="pre">maxretry</span></tt> - Defines the max retries allowed per user.</li>
+<li><tt class="docutils literal"><span class="pre">intervalretry</span></tt> - Defines the time to wait between retries                                  in seconds</li>
+<li><tt class="docutils literal"><span class="pre">calltimeout</span></tt> - Defines the number of seconds to timeout on calls</li>
+</ul>
+</div></blockquote>
+<p><strong>Gateways</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">aleg_gateway</span></tt> - Defines the Gateway to use to call the                                 subscriber</li>
+<li><tt class="docutils literal"><span class="pre">voipapp</span></tt> - Defines the  application to use when the                             call is established on the A-Leg</li>
+<li><tt class="docutils literal"><span class="pre">extra_data</span></tt> - Defines the additional data to pass to the                                 application</li>
+</ul>
+</div></blockquote>
+<p><strong>CURL Usage</strong>:</p>
+<div class="highlight-python"><pre>curl -u username:password -i -H "Accept: application/json" -X POST http://127.0.0.1:8000/api/dialer_campaign/campaign/ -d "name=mylittlecampaign&amp;description=&amp;callerid=1239876&amp;startingdate=1301392136.0&amp;expirationdate=1301332136.0&amp;frequency=20&amp;callmaxduration=50&amp;maxretry=3&amp;intervalretry=3000&amp;calltimeout=60&amp;aleg_gateway=1&amp;voipapp=1&amp;extra_data=2000"</pre>
+</div>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s">&quot;voipapp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;gateway_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-06-22 09:58:22&quot;</span><span class="p">,</span>
+        <span class="s">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>                    
+        <span class="s">&quot;created_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-04-08 08:00:09&quot;</span><span class="p">,</span>
+        <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_VoIP_App&quot;</span>
+    <span class="p">},</span>
+    <span class="s">&quot;startingdate&quot;</span><span class="p">:</span> <span class="s">&quot;2011-03-29 09:48:56&quot;</span><span class="p">,</span>
+    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_Campaign&quot;</span><span class="p">,</span>
+    <span class="s">&quot;callerid&quot;</span><span class="p">:</span> <span class="s">&quot;123987&quot;</span><span class="p">,</span>
+    <span class="s">&quot;callmaxduration&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s">&quot;intervalretry&quot;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">&quot;phonebook&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_Phonebook&quot;</span><span class="p">,</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s">&quot;frequency&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s">&quot;maxretry&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s">&quot;expirationdate&quot;</span><span class="p">:</span> <span class="s">&quot;2011-03-28 17:08:56&quot;</span><span class="p">,</span>
+    <span class="s">&quot;campaign_code&quot;</span><span class="p">:</span> <span class="s">&quot;XIUER&quot;</span><span class="p">,</span>
+    <span class="s">&quot;aleg_gateway&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-06-15 00:28:52&quot;</span><span class="p">,</span>
+        <span class="s">&quot;addparameter&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;addprefix&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;gateway_codecs&quot;</span><span class="p">:</span> <span class="s">&quot;PCMA,PCMU&quot;</span><span class="p">,</span>
+        <span class="s">&quot;failover_id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;count_call&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;created_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-06-15 00:28:52&quot;</span><span class="p">,</span>
+        <span class="s">&quot;maximum_call&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;gateway_timeouts&quot;</span><span class="p">:</span> <span class="s">&quot;10,10&quot;</span><span class="p">,</span>
+        <span class="s">&quot;count_in_use&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;removeprefix&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;gateway_retries&quot;</span><span class="p">:</span> <span class="s">&quot;2,1&quot;</span><span class="p">,</span>
+        <span class="s">&quot;gateways&quot;</span><span class="p">:</span> <span class="s">&quot;user/,user&quot;</span><span class="p">,</span>
+        <span class="s">&quot;secondused&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;originate_dial_string&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>                    
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_Gateway&quot;</span>
+    <span class="p">},</span>
+    <span class="s">&quot;extra_data&quot;</span><span class="p">:</span> <span class="s">&quot;2000&quot;</span><span class="p">,</span>
+    <span class="s">&quot;calltimeout&quot;</span><span class="p">:</span> <span class="mi">60</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Error</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>You have too many campaigns. Max allowed 5</li>
+<li>The Gateway ID doesn&#8217;t exist!</li>
+<li>The VoipApp doesn&#8217;t exist!</li>
+<li>The Campaign name is duplicated!</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="read">
+<span id="read-campaign"></span><h2><tt class="xref py py-class docutils literal"><span class="pre">read</span></tt><a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><tt class="descclassname">dialer_campaign.api.handlers.</tt><tt class="descname">campaignHandler</tt></dt>
+<dd><dl class="method">
+<dt id="dialer_campaign.api.handlers.campaignHandler.read">
+<tt class="descname">read</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.api.handlers.campaignHandler.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to read all pending campaigns, or a specific campaign if
+a campaign_id is supplied</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">campaign_id</span></tt> - Campaign ID</li>
+</ul>
+</div></blockquote>
+<p><strong>CURL Usage</strong>:</p>
+<div class="highlight-python"><pre>curl -u username:password -i -H "Accept: application/json" -X GET http://127.0.0.1:8000/api/dialer_campaign/campaign/
+
+curl -u username:password -i -H "Accept: application/json" -X GET http://127.0.0.1:8000/api/dialer_campaign/campaign/%campaign_id%/</pre>
+</div>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s">&quot;voipapp&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;gateway_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-06-22 09:58:22&quot;</span><span class="p">,</span>
+            <span class="s">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>                        
+            <span class="s">&quot;created_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-04-08 08:00:09&quot;</span><span class="p">,</span>
+            <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_VoIP_App&quot;</span>
+        <span class="p">},</span>
+        <span class="s">&quot;startingdate&quot;</span><span class="p">:</span> <span class="s">&quot;2011-03-29 09:48:56&quot;</span><span class="p">,</span>
+        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_Campaign&quot;</span><span class="p">,</span>
+        <span class="s">&quot;callerid&quot;</span><span class="p">:</span> <span class="s">&quot;123987&quot;</span><span class="p">,</span>
+        <span class="s">&quot;callmaxduration&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="s">&quot;intervalretry&quot;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;phonebook&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_Phonebook&quot;</span><span class="p">,</span>
+                <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s">&quot;frequency&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s">&quot;maxretry&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s">&quot;expirationdate&quot;</span><span class="p">:</span> <span class="s">&quot;2011-03-28 17:08:56&quot;</span><span class="p">,</span>
+        <span class="s">&quot;campaign_code&quot;</span><span class="p">:</span> <span class="s">&quot;XIUER&quot;</span><span class="p">,</span>
+        <span class="s">&quot;aleg_gateway&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-06-15 00:28:52&quot;</span><span class="p">,</span>
+            <span class="s">&quot;addparameter&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+            <span class="s">&quot;addprefix&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+            <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+            <span class="s">&quot;gateway_codecs&quot;</span><span class="p">:</span> <span class="s">&quot;PCMA,PCMU&quot;</span><span class="p">,</span>
+            <span class="s">&quot;failover_id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;count_call&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;created_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-06-15 00:28:52&quot;</span><span class="p">,</span>
+            <span class="s">&quot;maximum_call&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;gateway_timeouts&quot;</span><span class="p">:</span> <span class="s">&quot;10,10&quot;</span><span class="p">,</span>
+            <span class="s">&quot;count_in_use&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;removeprefix&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+            <span class="s">&quot;gateway_retries&quot;</span><span class="p">:</span> <span class="s">&quot;2,1&quot;</span><span class="p">,</span>
+            <span class="s">&quot;gateways&quot;</span><span class="p">:</span> <span class="s">&quot;user/,user&quot;</span><span class="p">,</span>
+            <span class="s">&quot;secondused&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;originate_dial_string&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>                        
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_Gateway&quot;</span>
+        <span class="p">},</span>
+        <span class="s">&quot;extra_data&quot;</span><span class="p">:</span> <span class="s">&quot;2000&quot;</span><span class="p">,</span>
+        <span class="s">&quot;calltimeout&quot;</span><span class="p">:</span> <span class="mi">60</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Error</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Campaign(s) not found</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="update">
+<span id="update-campaign"></span><h2><tt class="xref py py-class docutils literal"><span class="pre">update</span></tt><a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><tt class="descclassname">dialer_campaign.api.handlers.</tt><tt class="descname">campaignHandler</tt></dt>
+<dd><dl class="method">
+<dt id="dialer_campaign.api.handlers.campaignHandler.update">
+<tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.api.handlers.campaignHandler.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to update campaign status or settings</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">campaign_id</span></tt> - Campaign ID</li>
+<li><tt class="docutils literal"><span class="pre">status</span></tt> - New campaign status values (1:START, 2:PAUSE,            3:ABORT, 4:END)</li>
+<li><tt class="docutils literal"><span class="pre">startingdate</span></tt> - Start date. Epoch Time, ie 1301414368</li>
+<li><tt class="docutils literal"><span class="pre">expirationdate</span></tt> - Expiry date. Epoch Time, ie 1301414368</li>
+<li><tt class="docutils literal"><span class="pre">daily_start_time</span></tt> - Daily Start Time, default &#8216;00:00:00&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">daily_stop_time</span></tt> - Daily Stop Time, default &#8216;23:59:59&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">monday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">tuesday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">wednesday</span></tt> - Set to 1 if you want to run this day of the week            , default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">thursday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">friday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">saturday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">sunday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">frequency</span></tt> - Defines the frequency and speed of the campaign.                              This is the number of calls per minute.</li>
+<li><tt class="docutils literal"><span class="pre">callmaxduration</span></tt> - Defines the maximum call duration.</li>
+<li><tt class="docutils literal"><span class="pre">maxretry</span></tt> - Defines the max retries allowed per user.</li>
+<li><tt class="docutils literal"><span class="pre">intervalretry</span></tt> - Defines the time to wait between retries                                  in seconds</li>
+<li><tt class="docutils literal"><span class="pre">calltimeout</span></tt> - Defines the number of second to timeout on calls</li>
+<li><tt class="docutils literal"><span class="pre">aleg_gateway</span></tt> - Defines the Gateway to use to call the                                 subscriber</li>
+<li><tt class="docutils literal"><span class="pre">voipapp</span></tt> - Defines the VoIP application</li>
+<li><tt class="docutils literal"><span class="pre">extra_data</span></tt> - Defines the additional data to pass to the                                 application</li>
+</ul>
+</div></blockquote>
+<p><strong>CURL Usage</strong>:</p>
+<div class="highlight-python"><pre>curl -u username:password -i -H "Accept: application/json" -X PUT http://127.0.0.1:8000/api/dialer_campaign/campaign/%campaign_id%/ -d "status=2"
+
+curl -u username:password -i -H "Accept: application/json" -X PUT http://127.0.0.1:8000/api/dialer_campaign/campaign/%campaign_id%/ -d "callerid=123987&amp;status=2&amp;startingdate=1301392136.0&amp;expirationdate=1301332136.0&amp;frequency=20&amp;callmaxduration=50&amp;maxretry=3&amp;intervalretry=3000&amp;calltimeout=60&amp;aleg_gateway=1&amp;voipapp=1&amp;extra_data=2000"</pre>
+</div>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;voipapp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;gateway_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-06-22 09:58:22&quot;</span><span class="p">,</span>
+        <span class="s">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;created_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-04-08 08:00:09&quot;</span><span class="p">,</span>
+        <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_VoIP_App&quot;</span>
+    <span class="p">},</span>
+    <span class="s">&quot;startingdate&quot;</span><span class="p">:</span> <span class="s">&quot;2011-06-28 06:46:08&quot;</span><span class="p">,</span>
+    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_Campaign&quot;</span><span class="p">,</span>
+    <span class="s">&quot;callerid&quot;</span><span class="p">:</span> <span class="s">&quot;123987&quot;</span><span class="p">,</span>
+    <span class="s">&quot;callmaxduration&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s">&quot;intervalretry&quot;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">&quot;phonebook&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_Phonebook&quot;</span><span class="p">,</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s">&quot;frequency&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s">&quot;maxretry&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s">&quot;expirationdate&quot;</span><span class="p">:</span> <span class="s">&quot;2011-07-05 06:46:08&quot;</span><span class="p">,</span>
+    <span class="s">&quot;campaign_code&quot;</span><span class="p">:</span> <span class="s">&quot;XIUER&quot;</span><span class="p">,</span>
+    <span class="s">&quot;aleg_gateway&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;updated_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-06-15 00:28:52&quot;</span><span class="p">,</span>
+        <span class="s">&quot;addparameter&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;addprefix&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;gateway_codecs&quot;</span><span class="p">:</span> <span class="s">&quot;PCMA,PCMU&quot;</span><span class="p">,</span>
+        <span class="s">&quot;failover_id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;count_call&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;created_date&quot;</span><span class="p">:</span> <span class="s">&quot;2011-06-15 00:28:52&quot;</span><span class="p">,</span>
+        <span class="s">&quot;maximum_call&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;gateway_timeouts&quot;</span><span class="p">:</span> <span class="s">&quot;10,10&quot;</span><span class="p">,</span>
+        <span class="s">&quot;count_in_use&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;removeprefix&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;gateway_retries&quot;</span><span class="p">:</span> <span class="s">&quot;2,1&quot;</span><span class="p">,</span>
+        <span class="s">&quot;gateways&quot;</span><span class="p">:</span> <span class="s">&quot;user/,user&quot;</span><span class="p">,</span>
+        <span class="s">&quot;secondused&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;originate_dial_string&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span> 
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Default_Gateway&quot;</span>
+    <span class="p">},</span>
+    <span class="s">&quot;extra_data&quot;</span><span class="p">:</span> <span class="s">&quot;2000&quot;</span><span class="p">,</span>
+    <span class="s">&quot;calltimeout&quot;</span><span class="p">:</span> <span class="mi">60</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Error</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Campaign not found.</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="delete">
+<span id="delete-campaign"></span><h2><tt class="xref py py-class docutils literal"><span class="pre">delete</span></tt><a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><tt class="descclassname">dialer_campaign.api.handlers.</tt><tt class="descname">campaignHandler</tt></dt>
+<dd><dl class="method">
+<dt id="dialer_campaign.api.handlers.campaignHandler.delete">
+<tt class="descname">delete</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.api.handlers.campaignHandler.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to delete campaign status</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">campaign_id</span></tt> - Campaign ID</li>
+</ul>
+</div></blockquote>
+<p><strong>CURL Usage</strong>:</p>
+<div class="highlight-python"><pre>curl -u username:password -i -H "Accept: application/json" -X DELETE http://127.0.0.1:8000/api/dialer_campaign/campaign/%campaign_id%/</pre>
+</div>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-python"><pre>HTTP/1.0 204 NO CONTENT
+Date: Wed, 18 May 2011 13:23:14 GMT
+Server: WSGIServer/0.1 Python/2.6.2
+Vary: Authorization
+Content-Length: 0
+Content-Type: text/plain</pre>
+</div>
+<p><strong>Error</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>NOT FOUND Campaign ID doesn&#8217;t exist.</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">campaignHandler</span></tt></a><ul>
+<li><a class="reference internal" href="#create"><tt class="docutils literal"><span class="pre">create</span></tt></a></li>
+<li><a class="reference internal" href="#read"><tt class="docutils literal"><span class="pre">read</span></tt></a></li>
+<li><a class="reference internal" href="#update"><tt class="docutils literal"><span class="pre">update</span></tt></a></li>
+<li><a class="reference internal" href="#delete"><tt class="docutils literal"><span class="pre">delete</span></tt></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../api-reference.html"
+                        title="previous chapter">API Reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="campaign_delete_cascade_handler.html"
+                        title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">campaignDeleteCascadeHandler</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api-doc/campaign_handler.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="campaign_delete_cascade_handler.html" title="campaignDeleteCascadeHandler"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../api-reference.html" title="API Reference"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies v0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

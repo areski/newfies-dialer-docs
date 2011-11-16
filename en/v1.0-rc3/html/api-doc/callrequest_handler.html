@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>callrequestHandler &mdash; Newfies v0.1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies v0.1.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="next" title="cdrHandler" href="cdr_handler.html" />
+    <link rel="prev" title="bulkcontactHandler" href="bulkcontact_handler.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cdr_handler.html" title="cdrHandler"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="bulkcontact_handler.html" title="bulkcontactHandler"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies v0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-dialer_cdr.api.handlers"></span><div class="section" id="callrequesthandler">
+<span id="callrequesthandler-model"></span><h1><a class="reference internal" href="#dialer_cdr.api.handlers.callrequestHandler" title="dialer_cdr.api.handlers.callrequestHandler"><tt class="xref py py-class docutils literal"><span class="pre">callrequestHandler</span></tt></a><a class="headerlink" href="#callrequesthandler" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="dialer_cdr.api.handlers.callrequestHandler">
+<em class="property">class </em><tt class="descclassname">dialer_cdr.api.handlers.</tt><tt class="descname">callrequestHandler</tt><a class="headerlink" href="#dialer_cdr.api.handlers.callrequestHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>This API provides basic functionality to create, read and update
+callrequests.</p>
+</dd></dl>
+
+<div class="section" id="create">
+<span id="create-callrequest"></span><h2><tt class="xref py py-class docutils literal"><span class="pre">create</span></tt><a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><tt class="descclassname">dialer_cdr.api.handlers.</tt><tt class="descname">callrequestHandler</tt></dt>
+<dd><dl class="method">
+<dt id="dialer_cdr.api.handlers.callrequestHandler.create">
+<tt class="descname">create</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_cdr.api.handlers.callrequestHandler.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new callrequest,
+Create a callrequest will spool a call directly from the platform using
+a gateway and an application.
+This can be used without creating a campaign or
+subscriber to send calls.</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">request_uuid</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">call_time</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">call_type</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">timeout</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">timelimit</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">status</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">campaign_subscriber</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">campaign</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">voipapp</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">callerid</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">phone_number</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">extra_dial_string</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">extra_data</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">num_attempt</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">last_attempt_time</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">result</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">hangup_cause</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">last_attempt_time</span></tt> -</li>
+</ul>
+</div></blockquote>
+<p><strong>CURL Usage</strong>:</p>
+<div class="highlight-python"><pre>curl -u username:password -i -H "Accept: application/json" -X POST http://127.0.0.1:8000/api/dialer_cdr/callrequest/ -d "request_uuid=2342jtdsf-00123&amp;call_time=YYYY-MM-DD HH:MM:SS&amp;phone_number=8792749823&amp;voipapp=&amp;timeout=30000&amp;callerid=650784355&amp;call_type=1"</pre>
+</div>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s">&quot;callerid&quot;</span><span class="p">:</span> <span class="s">&quot;650784355&quot;</span><span class="p">,</span>
+    <span class="s">&quot;num_attempt&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s">&quot;timeout&quot;</span><span class="p">:</span> <span class="s">&quot;30000&quot;</span><span class="p">,</span>
+    <span class="s">&quot;voipapp&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+    <span class="s">&quot;call_time&quot;</span><span class="p">:</span> <span class="s">&quot;2011-05-07 13:03:11&quot;</span><span class="p">,</span>
+    <span class="s">&quot;call_type&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+    <span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+    <span class="s">&quot;request_uuid&quot;</span><span class="p">:</span> <span class="s">&quot;2342jtdsf-00123&quot;</span><span class="p">,</span>
+    <span class="s">&quot;last_attempt_time&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;phone_number&quot;</span><span class="p">:</span> <span class="s">&quot;1231321&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Error</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Duplicate Entry</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="read">
+<span id="read-callrequest"></span><h2><tt class="xref py py-class docutils literal"><span class="pre">read</span></tt><a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><tt class="descclassname">dialer_cdr.api.handlers.</tt><tt class="descname">callrequestHandler</tt></dt>
+<dd><dl class="method">
+<dt id="dialer_cdr.api.handlers.callrequestHandler.read">
+<tt class="descname">read</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_cdr.api.handlers.callrequestHandler.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to read all pending callrequests, or a specific callrequest
+if a callrequest_id is supplied</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">callrequest_id</span></tt>- Callrequest Id</li>
+</ul>
+</div></blockquote>
+<p><strong>CURL Usage</strong>:</p>
+<div class="highlight-python"><pre>curl -u username:password -i -H "Accept: application/json" -X GET http://127.0.0.1:8000/api/dialer_cdr/callrequest/
+
+curl -u username:password -i -H "Accept: application/json" -X GET http://127.0.0.1:8000/api/dialer_cdr/callrequest/xx/</pre>
+</div>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s">&quot;callerid&quot;</span><span class="p">:</span> <span class="s">&quot;650784355&quot;</span><span class="p">,</span>
+        <span class="s">&quot;num_attempt&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s">&quot;timeout&quot;</span><span class="p">:</span> <span class="s">&quot;30000&quot;</span><span class="p">,</span>
+        <span class="s">&quot;voipapp&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;call_time&quot;</span><span class="p">:</span> <span class="s">&quot;2011-05-07 13:03:11&quot;</span><span class="p">,</span>
+        <span class="s">&quot;call_type&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;request_uuid&quot;</span><span class="p">:</span> <span class="s">&quot;2342jtdsf-00123&quot;</span><span class="p">,</span>
+        <span class="s">&quot;last_attempt_time&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;phone_number&quot;</span><span class="p">:</span> <span class="s">&quot;1231321&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Error</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Bad Request.</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="update">
+<span id="update-callrequest"></span><h2><tt class="xref py py-class docutils literal"><span class="pre">update</span></tt><a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><tt class="descclassname">dialer_cdr.api.handlers.</tt><tt class="descname">callrequestHandler</tt></dt>
+<dd><dl class="method">
+<dt id="dialer_cdr.api.handlers.callrequestHandler.update">
+<tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_cdr.api.handlers.callrequestHandler.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to update a callrequest</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">status</span></tt> - Status Values (1:Pending, 2:Failure, 3:Retry,                         4:Success, 5:Abort, 6:Pause, 7:Process, 8: In-Progress)</li>
+</ul>
+</div></blockquote>
+<p><strong>CURL Usage</strong>:</p>
+<div class="highlight-python"><pre>curl -u username:password -i -H "Accept: application/json" -X PUT http://127.0.0.1:8000/api/dialer_cdr/callrequest/%callrequest_id%/ -d "status=5"</pre>
+</div>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;5&quot;</span><span class="p">,</span>
+    <span class="s">&quot;callerid&quot;</span><span class="p">:</span> <span class="s">&quot;650784355&quot;</span><span class="p">,</span>
+    <span class="s">&quot;num_attempt&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s">&quot;timeout&quot;</span><span class="p">:</span> <span class="s">&quot;30000&quot;</span><span class="p">,</span>
+    <span class="s">&quot;voipapp&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+    <span class="s">&quot;call_time&quot;</span><span class="p">:</span> <span class="s">&quot;2011-05-07 13:03:11&quot;</span><span class="p">,</span>
+    <span class="s">&quot;call_type&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+    <span class="s">&quot;result&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+    <span class="s">&quot;request_uuid&quot;</span><span class="p">:</span> <span class="s">&quot;2342jtdsf-00123&quot;</span><span class="p">,</span>
+    <span class="s">&quot;last_attempt_time&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;phone_number&quot;</span><span class="p">:</span> <span class="s">&quot;1231321&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Error</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Not here.</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">callrequestHandler</span></tt></a><ul>
+<li><a class="reference internal" href="#create"><tt class="docutils literal"><span class="pre">create</span></tt></a></li>
+<li><a class="reference internal" href="#read"><tt class="docutils literal"><span class="pre">read</span></tt></a></li>
+<li><a class="reference internal" href="#update"><tt class="docutils literal"><span class="pre">update</span></tt></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="bulkcontact_handler.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">bulkcontactHandler</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cdr_handler.html"
+                        title="next chapter"><tt class="docutils literal"><span class="pre">cdrHandler</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api-doc/callrequest_handler.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cdr_handler.html" title="cdrHandler"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="bulkcontact_handler.html" title="bulkcontactHandler"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies v0.1.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

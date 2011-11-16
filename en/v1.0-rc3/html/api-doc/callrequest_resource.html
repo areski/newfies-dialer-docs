@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CallrequestResource &mdash; Newfies-Dialer 1.0/RC3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0/RC3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.0/RC3 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="next" title="CdrResource" href="cdr_resource.html" />
+    <link rel="prev" title="CampaignSubscriberResource" href="campaign_subscriber_resource.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cdr_resource.html" title="CdrResource"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="campaign_subscriber_resource.html" title="CampaignSubscriberResource"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.0/RC3 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-api.resources"></span><div class="section" id="callrequestresource">
+<span id="callrequestresource-model"></span><h1><a class="reference internal" href="#api.resources.CallrequestResource" title="api.resources.CallrequestResource"><tt class="xref py py-class docutils literal"><span class="pre">CallrequestResource</span></tt></a><a class="headerlink" href="#callrequestresource" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="api.resources.CallrequestResource">
+<em class="property">class </em><tt class="descclassname">api.resources.</tt><tt class="descname">CallrequestResource</tt><big>(</big><em>api_name=None</em><big>)</big><a class="headerlink" href="#api.resources.CallrequestResource" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">callrequest_id</span></tt>- Callrequest Id</li>
+<li><tt class="docutils literal"><span class="pre">request_uuid</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">call_time</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">call_type</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">timeout</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">timelimit</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">status</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">campaign_subscriber</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">campaign</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">voipapp</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">callerid</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">phone_number</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">extra_dial_string</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">extra_data</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">num_attempt</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">last_attempt_time</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">result</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">hangup_cause</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">last_attempt_time</span></tt> -</li>
+</ul>
+</div></blockquote>
+<p><strong>Validation</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>CallrequestValidation()</li>
+</ul>
+</div></blockquote>
+<p><strong>Create</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password --dump-header - -H "Content-Type:application/json" -X POST --data '{"request_uuid": "2342jtdsf-00123", "call_time": "2011-10-20 12:21:22", "phone_number": "8792749823", "voipapp": "1","timeout": "30000", "callerid": "650784355", "call_type": "1"}' http://localhost:8000/api/v1/callrequest/</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><pre>HTTP/1.0 201 CREATED
+Date: Fri, 23 Sep 2011 06:08:34 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Type: text/html; charset=utf-8
+Location: http://localhost:8000/api/app/campaign/1/
+Content-Language: en-us</pre>
+</div>
+</div></blockquote>
+<p><strong>Read</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password -H 'Accept: application/json' http://localhost:8000/api/v1/callrequest/?format=json
+
+curl -u username:password -H 'Accept: application/json' http://localhost:8000/api/v1/callrequest/%callreq_id%/?format=json</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+   <span class="s">&quot;meta&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;limit&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+      <span class="s">&quot;next&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;offset&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+      <span class="s">&quot;previous&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;total_count&quot;</span><span class="p">:</span><span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="s">&quot;objects&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">&quot;call_time&quot;</span><span class="p">:</span><span class="s">&quot;2011-10-20T12:21:22&quot;</span><span class="p">,</span>
+         <span class="s">&quot;call_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+         <span class="s">&quot;callerid&quot;</span><span class="p">:</span><span class="s">&quot;650784355&quot;</span><span class="p">,</span>
+         <span class="s">&quot;created_date&quot;</span><span class="p">:</span><span class="s">&quot;2011-10-14T07:33:41&quot;</span><span class="p">,</span>
+         <span class="s">&quot;extra_data&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+         <span class="s">&quot;extra_dial_string&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+         <span class="s">&quot;hangup_cause&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+         <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+         <span class="s">&quot;last_attempt_time&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+         <span class="s">&quot;num_attempt&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+         <span class="s">&quot;phone_number&quot;</span><span class="p">:</span><span class="s">&quot;8792749823&quot;</span><span class="p">,</span>
+         <span class="s">&quot;request_uuid&quot;</span><span class="p">:</span><span class="s">&quot;2342jtdsf-00123&quot;</span><span class="p">,</span>
+         <span class="s">&quot;resource_uri&quot;</span><span class="p">:</span><span class="s">&quot;/api/v1/callrequest/1/&quot;</span><span class="p">,</span>
+         <span class="s">&quot;result&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+         <span class="s">&quot;status&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+         <span class="s">&quot;timelimit&quot;</span><span class="p">:</span><span class="mi">3600</span><span class="p">,</span>
+         <span class="s">&quot;timeout&quot;</span><span class="p">:</span><span class="mi">30000</span><span class="p">,</span>
+         <span class="s">&quot;updated_date&quot;</span><span class="p">:</span><span class="s">&quot;2011-10-14T07:33:41&quot;</span><span class="p">,</span>
+         <span class="s">&quot;user&quot;</span><span class="p">:{</span>
+            <span class="s">&quot;first_name&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+            <span class="s">&quot;last_login&quot;</span><span class="p">:</span><span class="s">&quot;2011-10-11T01:03:42&quot;</span><span class="p">,</span>
+            <span class="s">&quot;last_name&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+            <span class="s">&quot;resource_uri&quot;</span><span class="p">:</span><span class="s">&quot;/api/v1/user/1/&quot;</span><span class="p">,</span>
+            <span class="s">&quot;username&quot;</span><span class="p">:</span><span class="s">&quot;areski&quot;</span>
+         <span class="p">},</span>
+         <span class="s">&quot;voipapp&quot;</span><span class="p">:{</span>
+            <span class="s">&quot;created_date&quot;</span><span class="p">:</span><span class="s">&quot;2011-04-08T08:00:09&quot;</span><span class="p">,</span>
+            <span class="s">&quot;data&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+            <span class="s">&quot;description&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;Default_VoIP_App&quot;</span><span class="p">,</span>
+            <span class="s">&quot;resource_uri&quot;</span><span class="p">:</span><span class="s">&quot;/api/v1/voipapp/1/&quot;</span><span class="p">,</span>
+            <span class="s">&quot;type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;updated_date&quot;</span><span class="p">:</span><span class="s">&quot;2011-10-14T07:33:41&quot;</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Update</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password --dump-header - -H "Content-Type: application/json" -X PUT --data '{"status": "5"}' http://localhost:8000/api/v1/callrequest/%callrequest_id%/</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><pre>HTTP/1.0 204 NO CONTENT
+Date: Fri, 23 Sep 2011 06:46:12 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Length: 0
+Content-Type: text/html; charset=utf-8
+Content-Language: en-us</pre>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="campaign_subscriber_resource.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">CampaignSubscriberResource</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cdr_resource.html"
+                        title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">CdrResource</span></tt></a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cdr_resource.html" title="CdrResource"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="campaign_subscriber_resource.html" title="CampaignSubscriberResource"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.0/RC3 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

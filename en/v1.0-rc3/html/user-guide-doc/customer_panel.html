@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Customer Panel &mdash; Newfies-Dialer 1.0/RC3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0/RC3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.0/RC3 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="../user-guide.html" />
+    <link rel="next" title="Configuration and Defaults" href="../configuration-defaults.html" />
+    <link rel="prev" title="Admin Panel" href="admin_panel.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../configuration-defaults.html" title="Configuration and Defaults"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="admin_panel.html" title="Admin Panel"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.0/RC3 documentation</a> &raquo;</li>
+          <li><a href="../user-guide.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="customer-panel">
+<span id="id1"></span><h1>Customer Panel<a class="headerlink" href="#customer-panel" title="Permalink to this headline">¶</a></h1>
+<p>User Interface :</p>
+<p><a class="reference external" href="http://localhost:8000/">http://localhost:8000/</a>
+This application provides a user interface for restricted management of
+the User&#8217;s Campaigns, Phonebooks and Subscribers. It also provides detailed
+reporting of calls and message delivery.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#screenshot-with-features" id="id2">Screenshot with Features</a></li>
+</ul>
+</div>
+<div class="section" id="screenshot-with-features">
+<span id="customer-screenshot-features"></span><h2><a class="toc-backref" href="#id2">Screenshot with Features</a><a class="headerlink" href="#screenshot-with-features" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="index">
+<h3>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
+<p>Index page for the customer interface after successful login with user credentials</p>
+<img alt="../_images/customer_screenshot.png" src="../_images/customer_screenshot.png" />
+</div>
+<div class="section" id="phonebook">
+<span id="customer-phonebook-access"></span><h3>Phonebook<a class="headerlink" href="#phonebook" title="Permalink to this headline">¶</a></h3>
+<p>The phonebook list will be displayed from the following URL. You can add a new
+phonebook by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">phonebook</span></tt> and add the name of a phonebook and its
+description. Also from the phonebook list, click on the phonebook to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/phonebook/">http://localhost:8000/dialer_campaign/phonebook/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/phonebook_list1.png" src="../_images/phonebook_list1.png" />
+<p>To Add/Update a Phonebook for a logged in user</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/phonebook/add/">http://localhost:8000/dialer_campaign/phonebook/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/phonebook/1/">http://localhost:8000/dialer_campaign/phonebook/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_phonebook1.png" src="../_images/update_phonebook1.png" />
+</div>
+<div class="section" id="contact">
+<span id="customer-contact-access"></span><h3>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h3>
+<p>The contact list will be displayed from following the URL. You can add a new contact
+by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">contact</span></tt> &amp; adding the contact details (i.e. phone number, name,
+description about contact, contact status) under the logged in user&#8217;s phonebook from
+the phonebook list. On the contact list, click on the contact to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/contact/">http://localhost:8000/dialer_campaign/contact/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/contact_list1.png" src="../_images/contact_list1.png" />
+<p>To Add/Update a contact in a phonebook</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/contact/add/">http://localhost:8000/dialer_campaign/contact/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/contact/1/">http://localhost:8000/dialer_campaign/contact/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_contact1.png" src="../_images/update_contact1.png" style="width: 1000px;" />
+<p>To import bulk contacts into a phonebook, click on <tt class="docutils literal"><span class="pre">Import</span></tt>.
+where you can upload contacts via a CSV file under a logged in
+user&#8217;s phonebook.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/contact/import/">http://localhost:8000/dialer_campaign/contact/import/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/import_contact1.png" src="../_images/import_contact1.png" style="width: 1000px;" />
+</div>
+<div class="section" id="campaign">
+<span id="customer-campaign-access"></span><h3>Campaign<a class="headerlink" href="#campaign" title="Permalink to this headline">¶</a></h3>
+<p>The campaign list will be displayed from the following URL. You can add a new campaign for
+the logged in user by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">campaign</span></tt>. When adding a campaign, it is important
+to add the campaign&#8217;s start and end dates with time &amp; week-day exceptions. Select
+the gateway through which calls will be routed &amp; phonebook(s) that are
+linked with contacts from the campaign list, click on campaign to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/campaign/">http://localhost:8000/dialer_campaign/campaign/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/campaign_list1.png" src="../_images/campaign_list1.png" />
+<p>To Add/Update a Campaign for a logged in user</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/campaign/add/">http://localhost:8000/dialer_campaign/campaign/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/campaign/1/">http://localhost:8000/dialer_campaign/campaign/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_campaign1.png" src="../_images/update_campaign1.png" style="width: 1000px;" />
+</div>
+<div class="section" id="dashboard">
+<span id="customer-dashboard-access"></span><h3>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Dashboard gives the information anbout campaign &amp; its related call records</p>
+<img alt="../_images/customer_dashboard.png" src="../_images/customer_dashboard.png" />
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Customer Panel</a><ul>
+<li><a class="reference internal" href="#screenshot-with-features">Screenshot with Features</a><ul>
+<li><a class="reference internal" href="#index">Index</a></li>
+<li><a class="reference internal" href="#phonebook">Phonebook</a></li>
+<li><a class="reference internal" href="#contact">Contact</a></li>
+<li><a class="reference internal" href="#campaign">Campaign</a></li>
+<li><a class="reference internal" href="#dashboard">Dashboard</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="admin_panel.html"
+                        title="previous chapter">Admin Panel</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../configuration-defaults.html"
+                        title="next chapter">Configuration and Defaults</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../configuration-defaults.html" title="Configuration and Defaults"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="admin_panel.html" title="Admin Panel"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.0/RC3 documentation</a> &raquo;</li>
+          <li><a href="../user-guide.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

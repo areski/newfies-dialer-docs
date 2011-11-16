@@ -1,0 +1,145 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Newfies Signals &mdash; Newfies-Dialer 1.0/RC3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0/RC3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.0/RC3 documentation" href="../index.html" />
+    <link rel="up" title="Developer doc" href="../developer-doc.html" />
+    <link rel="next" title="Test Case Descriptions" href="testing.html" />
+    <link rel="prev" title="Newfies Tasks" href="tasks.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="testing.html" title="Test Case Descriptions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tasks.html" title="Newfies Tasks"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.0/RC3 documentation</a> &raquo;</li>
+          <li><a href="../developer-doc.html" accesskey="U">Developer doc</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-dialer_campaign.models">
+<span id="newfies-signals"></span><span id="signals"></span><h1>Newfies Signals<a class="headerlink" href="#module-dialer_campaign.models" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="post-save-add-contact">
+<span id="post-save-add-contact-signal"></span><h2><a class="reference internal" href="#dialer_campaign.models.post_save_add_contact" title="dialer_campaign.models.post_save_add_contact"><tt class="xref py py-class docutils literal"><span class="pre">post_save_add_contact</span></tt></a><a class="headerlink" href="#post-save-add-contact" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="function">
+<dt id="dialer_campaign.models.post_save_add_contact">
+<tt class="descclassname">dialer_campaign.models.</tt><tt class="descname">post_save_add_contact</tt><big>(</big><em>sender</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#dialer_campaign.models.post_save_add_contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <tt class="docutils literal"><span class="pre">post_save</span></tt> signal is sent by the Contact model instance whenever
+it is going to save.</p>
+<p><strong>Logic Description</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>When snew contact is added into <tt class="docutils literal"><span class="pre">Contact</span></tt> model, active the
+campaign list will be checked with the contact status.</li>
+<li>If the active campaign list count is more than one &amp; the contact 
+is active, the contact will be added into <tt class="docutils literal"><span class="pre">CampaignSubscriber</span></tt> 
+model.</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Newfies Signals</a><ul>
+<li><a class="reference internal" href="#post-save-add-contact"><tt class="docutils literal"><span class="pre">post_save_add_contact</span></tt></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="tasks.html"
+                        title="previous chapter">Newfies Tasks</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="testing.html"
+                        title="next chapter">Test Case Descriptions</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="testing.html" title="Test Case Descriptions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tasks.html" title="Newfies Tasks"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.0/RC3 documentation</a> &raquo;</li>
+          <li><a href="../developer-doc.html" >Developer doc</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

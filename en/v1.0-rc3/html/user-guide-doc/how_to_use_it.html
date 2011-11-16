@@ -1,0 +1,162 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to use Newfies-Dialer &mdash; Newfies-Dialer 1.0/RC3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0/RC3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.0/RC3 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="../user-guide.html" />
+    <link rel="next" title="Admin Panel" href="admin_panel.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="admin_panel.html" title="Admin Panel"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.0/RC3 documentation</a> &raquo;</li>
+          <li><a href="../user-guide.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="how-to-use-newfies-dialer">
+<span id="how-to-use-it"></span><h1>How to use Newfies-Dialer<a class="headerlink" href="#how-to-use-newfies-dialer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="create-call-list">
+<span id="call-list"></span><h2>Create call list<a class="headerlink" href="#create-call-list" title="Permalink to this headline">¶</a></h2>
+<p>To create a call list, click on <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">Phonebook</span></tt>, add name of phonebook &amp; its
+description. Click on <tt class="docutils literal"><span class="pre">Contacts</span></tt> and add phone numbers in the contact list.
+You can also import your call list from csv files, via clicking on
+<tt class="docutils literal"><span class="pre">Import</span> <span class="pre">contact</span></tt>.</p>
+</div>
+<div class="section" id="create-campaign">
+<span id="campaign"></span><h2>Create campaign<a class="headerlink" href="#create-campaign" title="Permalink to this headline">¶</a></h2>
+<p>To create a campaign, click on <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">campaign</span></tt>, add details for the campaign.
+Important: Add the campaign&#8217;s start and end dates with times &amp; week-day
+exceptions. Select the gateway through which calls will be routed &amp; the phonebook(s)
+linked with the contacts.</p>
+</div>
+<div class="section" id="dialer-settings">
+<span id="apply-dialer-settings"></span><h2>Dialer Settings<a class="headerlink" href="#dialer-settings" title="Permalink to this headline">¶</a></h2>
+<p>Dialer settings has to be mapped with system users who are going to create campaigns &amp; contacts.
+If dialer setting is not mapped with system users, notification &amp; mail has been sent to Super admin user.</p>
+<p>To create restrictions (like the Max. no of campaign, Max no of contacts etc.) for
+system User, Click on <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">dialer</span> <span class="pre">settings</span></tt>. Add numeric values for the limit.</p>
+<p>To apply the dialer settings limit on a system user, click on <tt class="docutils literal"><span class="pre">Customers</span></tt> or <tt class="docutils literal"><span class="pre">Admins</span></tt> in admin UI,
+select the user to update, &amp; apply the settings from the dialer settings list.</p>
+</div>
+<div class="section" id="reach-to-contacts-subscribers">
+<span id="reach-to-contact"></span><h2>Reach to contacts/subscribers<a class="headerlink" href="#reach-to-contacts-subscribers" title="Permalink to this headline">¶</a></h2>
+<p>A call-request will spool a call directly from the platform using a dialer gateway
+and update the call-request status after receiving a response from the gateway.</p>
+</div>
+<div class="section" id="voip-call-report">
+<span id="call-report"></span><h2>VoIP Call Report<a class="headerlink" href="#voip-call-report" title="Permalink to this headline">¶</a></h2>
+<p>As per the status of a call-request, it will be stored in the VoIP call records.
+This gives information of all the calls &amp; call statistics made with the call-request
+and also you can search for records on the basis of date range. You can export the VoIP
+call report into a csv file.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">How to use Newfies-Dialer</a><ul>
+<li><a class="reference internal" href="#create-call-list">Create call list</a></li>
+<li><a class="reference internal" href="#create-campaign">Create campaign</a></li>
+<li><a class="reference internal" href="#dialer-settings">Dialer Settings</a></li>
+<li><a class="reference internal" href="#reach-to-contacts-subscribers">Reach to contacts/subscribers</a></li>
+<li><a class="reference internal" href="#voip-call-report">VoIP Call Report</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="overview.html"
+                        title="previous chapter">Overview</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="admin_panel.html"
+                        title="next chapter">Admin Panel</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="admin_panel.html" title="Admin Panel"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.0/RC3 documentation</a> &raquo;</li>
+          <li><a href="../user-guide.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>
