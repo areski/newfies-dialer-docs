@@ -58,6 +58,72 @@
             
   <div class="section" id="how-to-use-newfies-dialer">
 <span id="how-to-use-it"></span><h1>How to use Newfies-Dialer<a class="headerlink" href="#how-to-use-newfies-dialer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="freeswitch-set-up">
+<h2>Freeswitch Set-Up<a class="headerlink" href="#freeswitch-set-up" title="Permalink to this headline">¶</a></h2>
+<p>Configure trunks and gateways in Freeswitch by creating an XML file in
+/usr/local/freeswitch/conf/sip_profiles/external/ and give it an identifiable name,
+e.g. call-labs.xml, and place the following lines in the file, edited to suit your provider:</p>
+<div class="highlight-python"><pre>&lt;include&gt;
+&lt;gateway name="ip address or hostname of carrier"&gt;
+&lt;!--/// account username *required* ///--&gt;
+&lt;param name="username" value="your username provided by carrier"/&gt;
+&lt;!--/// auth realm: *optional* same as gateway name, if blank ///--&gt;
+&lt;!--&lt;param name="realm" value="asterlink.com"/&gt;--&gt;
+&lt;!--/// username to use in from: *optional* same as username, if blank ///--&gt;
+&lt;param name="from-user" value="your username provided by carrier"/&gt;
+&lt;!--/// domain to use in from: *optional* same as realm, if blank ///--&gt;
+&lt;!--param name="from-domain" value=""/--&gt;
+&lt;!--/// account password *required* ///--&gt;
+&lt;param name="password" value="your password supplied by carrier"/&gt;
+&lt;!--/// extension for inbound calls: *optional* same as username, if blank ///--&gt;
+&lt;!--&lt;param name="extension" value="cluecon"/&gt;--&gt;
+&lt;!--/// proxy host: *optional* same as realm, if blank ///--&gt;
+&lt;!--&lt;param name="proxy" value="asterlink.com"/&gt;--&gt;
+&lt;!--/// send register to this proxy: *optional* same as proxy, if blank ///--&gt;
+&lt;!--&lt;param name="register-proxy" value="mysbc.com"/&gt;--&gt;
+&lt;!--/// expire in seconds: *optional* 3600, if blank ///--&gt;
+&lt;!--&lt;param name="expire-seconds" value="60"/&gt;--&gt;
+&lt;!--/// do not register ///--&gt;
+&lt;param name="register" value="true"/&gt;
+&lt;!-- which transport to use for register --&gt;
+&lt;!--&lt;param name="register-transport" value="udp"/&gt;--&gt;
+&lt;!--How many seconds before a retry when a failure or timeout occurs --&gt;
+&lt;!--&lt;param name="retry-seconds" value="30"/&gt;--&gt;
+&lt;!--Use the callerid of an inbound call in the from field on outbound calls via this gateway --&gt;
+&lt;!--&lt;param name="caller-id-in-from" value="false"/&gt;--&gt;
+&lt;!--extra sip params to send in the contact--&gt;
+&lt;!--&lt;param name="contact-params" value="tport=tcp"/&gt;--&gt;
+&lt;!--send an options ping every x seconds, failure will unregister and/or mark it down--&gt;
+&lt;!--&lt;param name="ping" value="25"/&gt;--&gt;
+&lt;/gateway&gt;
+&lt;/include&gt;</pre>
+</div>
+<p>Then in the Freeswitch CLI (fs_cli) “sofia profile external restart reloadxml”. When the command is
+complete, check the gateway has registered with the command “sofia status”.</p>
+</div>
+<div class="section" id="create-gateway">
+<h2>Create Gateway<a class="headerlink" href="#create-gateway" title="Permalink to this headline">¶</a></h2>
+<p>Having created the gateway in Freeswitch, Newfies-Dialer has to be told that it can use it. In
+admin,  add a new dialer gateway, e.g. sofia/gateway/myprovider/ (The final / is important) where
+“myprovider” is the gateway name setting used in above xml file in Freeswitch.</p>
+<p>Only the fields in bold are compulsory.</p>
+</div>
+<div class="section" id="dialer-settings">
+<span id="id1"></span><h2>Dialer Settings<a class="headerlink" href="#dialer-settings" title="Permalink to this headline">¶</a></h2>
+<p>Dialer settings are mapped with system users who are going to create campaigns &amp; contacts. If dialer
+settings are not mapped to users, notifications &amp; emails are sent to super admin user.</p>
+<p>To create restrictions (like the Max. no of campaign, Max no of contacts etc.) for
+system User, Click on <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">dialer</span> <span class="pre">settings</span></tt>. Add numeric values for the limit.</p>
+<p>To apply the dialer settings limit on a system user, click on <tt class="docutils literal"><span class="pre">Customers</span></tt> or <tt class="docutils literal"><span class="pre">Admins</span></tt>
+in admin UI, select the user to update, &amp; apply the settings from the dialer settings list.</p>
+</div>
+<div class="section" id="create-voice-application">
+<span id="voice-app"></span><h2>Create Voice Application<a class="headerlink" href="#create-voice-application" title="Permalink to this headline">¶</a></h2>
+<p>A number of voice applications are provided with Newfies-Dialer. Click <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">VoIP</span> <span class="pre">App</span></tt> give the
+voice application a name, select the type of  application from the dropdown, select the gateway
+to use if the call is to be redirected, and provide the data to be used, e.g. in the case of “Speak”
+this would be the words to convert to text to speech.</p>
+</div>
 <div class="section" id="create-call-list">
 <span id="call-list"></span><h2>Create call list<a class="headerlink" href="#create-call-list" title="Permalink to this headline">¶</a></h2>
 <p>To create a call list, click on <tt class="docutils literal"><span class="pre">Add</span></tt> in Phonebook list, add name of phonebook &amp; its
@@ -77,8 +143,8 @@ linked with the contacts.</p>
 <img alt="../_images/campaign_list1.png" src="../_images/campaign_list1.png" />
 <img alt="../_images/update_campaign1.png" src="../_images/update_campaign1.png" style="width: 1000px;" />
 </div>
-<div class="section" id="dialer-settings">
-<span id="apply-dialer-settings"></span><h2>Dialer Settings<a class="headerlink" href="#dialer-settings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="apply-dialer-settings">
+<span id="id2"></span><h2>Dialer Settings<a class="headerlink" href="#apply-dialer-settings" title="Permalink to this headline">¶</a></h2>
 <p>Dialer settings has to be mapped with system users who are going to create campaigns &amp; contacts.
 If dialer setting is not mapped with system users, notification &amp; mail has been sent to Super admin user.</p>
 <p>To create restrictions (like the Max. no of campaign, Max no of contacts etc.) for
@@ -102,6 +168,15 @@ and also you can search for records on the basis of date range. You can export t
 call report into a csv file.</p>
 <img alt="../_images/callreport.png" src="../_images/callreport.png" style="width: 1000px;" />
 </div>
+<div class="section" id="settings">
+<span id="id3"></span><h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p>The settings page provides a number of functions:-</p>
+<p>Account - Change the detail of the account.
+Password - Change the password.
+Notifications - Display system notifications.
+Limitation - Displays the parameters of the dialer settings.
+Authorized - Facitiy to check that a number is not blacklisted.</p>
+</div>
 </div>
 
 
@@ -113,11 +188,16 @@ call report into a csv file.</p>
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">How to use Newfies-Dialer</a><ul>
+<li><a class="reference internal" href="#freeswitch-set-up">Freeswitch Set-Up</a></li>
+<li><a class="reference internal" href="#create-gateway">Create Gateway</a></li>
+<li><a class="reference internal" href="#dialer-settings">Dialer Settings</a></li>
+<li><a class="reference internal" href="#create-voice-application">Create Voice Application</a></li>
 <li><a class="reference internal" href="#create-call-list">Create call list</a></li>
 <li><a class="reference internal" href="#create-campaign">Create campaign</a></li>
-<li><a class="reference internal" href="#dialer-settings">Dialer Settings</a></li>
+<li><a class="reference internal" href="#apply-dialer-settings">Dialer Settings</a></li>
 <li><a class="reference internal" href="#reach-to-contacts-subscribers">Reach to contacts/subscribers</a></li>
 <li><a class="reference internal" href="#voip-call-report">VoIP Call Report</a></li>
+<li><a class="reference internal" href="#settings">Settings</a></li>
 </ul>
 </li>
 </ul>
