@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Objects Description &mdash; Newfies-Dialer 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.0.0 documentation" href="../index.html" />
+    <link rel="up" title="Developer doc" href="../developer-doc.html" />
+    <link rel="next" title="Newfies-Dialer Views" href="views.html" />
+    <link rel="prev" title="Coding Style &amp; Structure" href="coding-structure.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="views.html" title="Newfies-Dialer Views"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="coding-structure.html" title="Coding Style &amp; Structure"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.0.0 documentation</a> &raquo;</li>
+          <li><a href="../developer-doc.html" accesskey="U">Developer doc</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-dialer_campaign.models">
+<span id="id1"></span><span id="objects-description"></span><h1>Objects Description<a class="headerlink" href="#module-dialer_campaign.models" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="phonebook">
+<span id="phonebook-model"></span><h2><a class="reference internal" href="#dialer_campaign.models.Phonebook" title="dialer_campaign.models.Phonebook"><tt class="xref py py-class docutils literal"><span class="pre">Phonebook</span></tt></a><a class="headerlink" href="#phonebook" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_campaign.models.Phonebook">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.models.</tt><tt class="descname">Phonebook</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#dialer_campaign.models.Phonebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>This defines the Phonebook</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">name</span></tt> - phonebook name.</li>
+<li><tt class="docutils literal"><span class="pre">description</span></tt> - description about the phonebook.</li>
+</ul>
+</div></blockquote>
+<p><strong>Relationships</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">user</span></tt> - Foreign key relationship to the User model.        Each phonebook is assigned to a User</li>
+</ul>
+</div></blockquote>
+<p><strong>Name of DB table</strong>: dialer_phonebook</p>
+<dl class="method">
+<dt id="dialer_campaign.models.Phonebook.phonebook_contacts">
+<tt class="descname">phonebook_contacts</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.models.Phonebook.phonebook_contacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will return a count of the contacts in the phonebook</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="contact">
+<span id="contact-model"></span><h2><a class="reference internal" href="#dialer_campaign.models.Contact" title="dialer_campaign.models.Contact"><tt class="xref py py-class docutils literal"><span class="pre">Contact</span></tt></a><a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_campaign.models.Contact">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.models.</tt><tt class="descname">Contact</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#dialer_campaign.models.Contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>This defines the Contact</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">contact</span></tt> - Contact no</li>
+<li><tt class="docutils literal"><span class="pre">last_name</span></tt> - Contact&#8217;s last name</li>
+<li><tt class="docutils literal"><span class="pre">first_name</span></tt> - Contact&#8217;s first name</li>
+<li><tt class="docutils literal"><span class="pre">email</span></tt> - Contact&#8217;s e-mail address</li>
+<li><tt class="docutils literal"><span class="pre">city</span></tt> - city name</li>
+<li><tt class="docutils literal"><span class="pre">description</span></tt> - description about a Contact</li>
+<li><tt class="docutils literal"><span class="pre">status</span></tt> - contact status</li>
+<li><tt class="docutils literal"><span class="pre">additional_vars</span></tt> - Additional variables</li>
+</ul>
+</div></blockquote>
+<p><strong>Relationships</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">phonebook</span></tt> - Foreign key relationship to the Phonebook model.        Each contact mapped with a phonebook</li>
+<li><tt class="docutils literal"><span class="pre">country</span></tt> - Foreign key relationship to the Country model.        Each contact mapped with a country</li>
+</ul>
+</div></blockquote>
+<p><strong>Name of DB table</strong>: dialer_contact</p>
+<dl class="method">
+<dt id="dialer_campaign.models.Contact.contact_name">
+<tt class="descname">contact_name</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.models.Contact.contact_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return Contact Name</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="campaignmanager">
+<span id="campaign-manager-model"></span><h2><a class="reference internal" href="#dialer_campaign.models.CampaignManager" title="dialer_campaign.models.CampaignManager"><tt class="xref py py-class docutils literal"><span class="pre">CampaignManager</span></tt></a><a class="headerlink" href="#campaignmanager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_campaign.models.CampaignManager">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.models.</tt><tt class="descname">CampaignManager</tt><a class="headerlink" href="#dialer_campaign.models.CampaignManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Campaign Manager</p>
+<dl class="method">
+<dt id="dialer_campaign.models.CampaignManager.get_expired_campaign">
+<tt class="descname">get_expired_campaign</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.models.CampaignManager.get_expired_campaign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all the campaigns which are expired or going to expire
+based on the expiry date but status is not &#8216;END&#8217;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_campaign.models.CampaignManager.get_running_campaign">
+<tt class="descname">get_running_campaign</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.models.CampaignManager.get_running_campaign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all the active campaigns which will be running based on
+the expiry date, the daily start/stop time and days of the week</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="campaign">
+<span id="campaign-model"></span><h2><a class="reference internal" href="#dialer_campaign.models.Campaign" title="dialer_campaign.models.Campaign"><tt class="xref py py-class docutils literal"><span class="pre">Campaign</span></tt></a><a class="headerlink" href="#campaign" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_campaign.models.Campaign">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.models.</tt><tt class="descname">Campaign</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#dialer_campaign.models.Campaign" title="Permalink to this definition">¶</a></dt>
+<dd><p>This defines the Campaign</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">campaign_code</span></tt> - Autogenerate campaign code to identify the campaign</li>
+<li><tt class="docutils literal"><span class="pre">name</span></tt> - Campaign name</li>
+<li><tt class="docutils literal"><span class="pre">description</span></tt> - Description about the Campaign</li>
+<li><tt class="docutils literal"><span class="pre">status</span></tt> - Campaign status</li>
+<li><tt class="docutils literal"><span class="pre">callerid</span></tt> - Caller ID</li>
+<li><tt class="docutils literal"><span class="pre">startingdate</span></tt> - Starting date of the Campaign</li>
+<li><tt class="docutils literal"><span class="pre">expirationdate</span></tt> - Expiry date of the Campaign</li>
+<li><tt class="docutils literal"><span class="pre">daily_start_time</span></tt> - Start time</li>
+<li><tt class="docutils literal"><span class="pre">daily_stop_time</span></tt> - End time</li>
+<li><tt class="docutils literal"><span class="pre">week_day_setting</span></tt> (monday, tuesday, wednesday, thursday, friday,         saturday, sunday)</li>
+<li><tt class="docutils literal"><span class="pre">frequency</span></tt> - Frequency, speed of the campaign. number of calls/min</li>
+<li><tt class="docutils literal"><span class="pre">callmaxduration</span></tt> - Max retry allowed per user</li>
+<li><tt class="docutils literal"><span class="pre">maxretry</span></tt> - Max retry allowed per user</li>
+<li><tt class="docutils literal"><span class="pre">intervalretry</span></tt> - Time to wait between retries in seconds</li>
+<li><tt class="docutils literal"><span class="pre">calltimeout</span></tt> - Number of seconds to timeout on calls</li>
+<li><tt class="docutils literal"><span class="pre">aleg_gateway</span></tt> - Gateway to use to reach the contact</li>
+<li><tt class="docutils literal"><span class="pre">extra_data</span></tt> - Additional data to pass to the application</li>
+</ul>
+</div></blockquote>
+<p><strong>Relationships</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">voipapp</span></tt> - Foreign key relationship to the VoipApp model.         VoIP Application to use with this campaign</li>
+<li><tt class="docutils literal"><span class="pre">phonebook</span></tt> - Many-To-Many relationship to the Phonebook model.</li>
+<li><tt class="docutils literal"><span class="pre">user</span></tt> - Foreign key relationship to the a User model.         Each campaign assigned to a User</li>
+</ul>
+</div></blockquote>
+<p><strong>Name of DB table</strong>: dialer_campaign</p>
+<dl class="method">
+<dt id="dialer_campaign.models.Campaign.campaignsubscriber_detail">
+<tt class="descname">campaignsubscriber_detail</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.models.Campaign.campaignsubscriber_detail" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will link to campaign subscribers who are associated with
+the campaign</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_campaign.models.Campaign.count_contact_of_phonebook">
+<tt class="descname">count_contact_of_phonebook</tt><big>(</big><em>status=None</em><big>)</big><a class="headerlink" href="#dialer_campaign.models.Campaign.count_contact_of_phonebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count the no. of Contacts in a phonebook</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_campaign.models.Campaign.get_active_callmaxduration">
+<tt class="descname">get_active_callmaxduration</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.models.Campaign.get_active_callmaxduration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the active call max duration</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_campaign.models.Campaign.get_active_contact">
+<tt class="descname">get_active_contact</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.models.Campaign.get_active_contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all the active Contacts from the phonebook</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_campaign.models.Campaign.get_active_contact_no_subscriber">
+<tt class="descname">get_active_contact_no_subscriber</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.models.Campaign.get_active_contact_no_subscriber" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of active contacts that do not exist in Campaign Subscriber</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_campaign.models.Campaign.get_active_max_frequency">
+<tt class="descname">get_active_max_frequency</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.models.Campaign.get_active_max_frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the active max frequency</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_campaign.models.Campaign.get_pending_subscriber">
+<tt class="descname">get_pending_subscriber</tt><big>(</big><em>limit=1000</em><big>)</big><a class="headerlink" href="#dialer_campaign.models.Campaign.get_pending_subscriber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all the pending subscribers from the campaign</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_campaign.models.Campaign.is_authorized_contact">
+<tt class="descname">is_authorized_contact</tt><big>(</big><em>str_contact</em><big>)</big><a class="headerlink" href="#dialer_campaign.models.Campaign.is_authorized_contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a contact is authorized</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_campaign.models.Campaign.progress_bar">
+<tt class="descname">progress_bar</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.models.Campaign.progress_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Progress bar generated based on no of contacts</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_campaign.models.Campaign.update_campaign_status">
+<tt class="descname">update_campaign_status</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_campaign.models.Campaign.update_campaign_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the campaign&#8217;s status</p>
+<p>For example,
+If campaign is active, you can change status to &#8216;Pause&#8217; or &#8216;Stop&#8217;</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="campaignsubscriber">
+<span id="campaignsubscriber-model"></span><h2><a class="reference internal" href="#dialer_campaign.models.CampaignSubscriber" title="dialer_campaign.models.CampaignSubscriber"><tt class="xref py py-class docutils literal"><span class="pre">CampaignSubscriber</span></tt></a><a class="headerlink" href="#campaignsubscriber" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_campaign.models.CampaignSubscriber">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.models.</tt><tt class="descname">CampaignSubscriber</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#dialer_campaign.models.CampaignSubscriber" title="Permalink to this definition">¶</a></dt>
+<dd><p>This defines the Contact imported to a Campaign</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">last_attempt</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">count_attempt</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">duplicate_contact</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">status</span></tt> -</li>
+</ul>
+</div></blockquote>
+<p><strong>Relationships</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">contact</span></tt> - Foreign key relationship to the Contact model.</li>
+<li><tt class="docutils literal"><span class="pre">campaign</span></tt> - Foreign key relationship to the Campaign model.</li>
+</ul>
+</div></blockquote>
+<p><strong>Name of DB table</strong>: dialer_campaign_subscriber</p>
+</dd></dl>
+
+<span class="target" id="module-dialer_cdr.models"></span></div>
+<div class="section" id="callrequest">
+<span id="callrequest-model"></span><h2><a class="reference internal" href="#dialer_cdr.models.Callrequest" title="dialer_cdr.models.Callrequest"><tt class="xref py py-class docutils literal"><span class="pre">Callrequest</span></tt></a><a class="headerlink" href="#callrequest" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_cdr.models.Callrequest">
+<em class="property">class </em><tt class="descclassname">dialer_cdr.models.</tt><tt class="descname">Callrequest</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#dialer_cdr.models.Callrequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>This defines the call request, the dialer will read any new request
+and attempt to deliver the call.</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">request_uuid</span></tt> - Unique id</li>
+<li><tt class="docutils literal"><span class="pre">call_time</span></tt> - Total call time</li>
+<li><tt class="docutils literal"><span class="pre">call_type</span></tt> - Call type</li>
+<li><tt class="docutils literal"><span class="pre">status</span></tt> - Call request status</li>
+<li><tt class="docutils literal"><span class="pre">callerid</span></tt> - Caller ID</li>
+<li><tt class="docutils literal"><span class="pre">last_attempt_time</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">result</span></tt> &#8211;</li>
+<li><tt class="docutils literal"><span class="pre">timeout</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">timelimit</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">extra_dial_string</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">phone_number</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">parent_callrequest</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">extra_data</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">num_attempt</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">hangup_cause</span></tt> -</li>
+</ul>
+</div></blockquote>
+<p><strong>Relationships</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">user</span></tt> - Foreign key relationship to the User model.        Each campaign assigned to a User</li>
+<li><tt class="docutils literal"><span class="pre">voipapp</span></tt> - Foreign key relationship to the VoipApp model.        VoIP Application to use with this campaign</li>
+<li><tt class="docutils literal"><span class="pre">aleg_gateway</span></tt> - Foreign key relationship to the Gateway model.        Gateway to use to reach the subscriber</li>
+<li><tt class="docutils literal"><span class="pre">campaign_subscriber</span></tt> - Foreign key relationship to        the CampaignSubscriber Model.</li>
+<li><tt class="docutils literal"><span class="pre">campaign</span></tt> - Foreign key relationship to the Campaign model.</li>
+</ul>
+</div></blockquote>
+<p><strong>Name of DB table</strong>: dialer_callrequest</p>
+</dd></dl>
+
+</div>
+<div class="section" id="voipcall">
+<span id="voipcall-model"></span><h2><a class="reference internal" href="#dialer_cdr.models.VoIPCall" title="dialer_cdr.models.VoIPCall"><tt class="xref py py-class docutils literal"><span class="pre">VoIPCall</span></tt></a><a class="headerlink" href="#voipcall" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_cdr.models.VoIPCall">
+<em class="property">class </em><tt class="descclassname">dialer_cdr.models.</tt><tt class="descname">VoIPCall</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#dialer_cdr.models.VoIPCall" title="Permalink to this definition">¶</a></dt>
+<dd><p>This gives information of all the calls made with
+the carrier charges and revenue of each call.</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">callid</span></tt> - callid of the phonecall</li>
+<li><tt class="docutils literal"><span class="pre">callerid</span></tt> - CallerID used to call out</li>
+<li><tt class="docutils literal"><span class="pre">phone_number</span></tt> - Phone number contacted</li>
+<li><tt class="docutils literal"><span class="pre">dialcode</span></tt> - Dialcode of the phonenumber</li>
+<li><tt class="docutils literal"><span class="pre">starting_date</span></tt> - Starting date of the call</li>
+<li><tt class="docutils literal"><span class="pre">duration</span></tt> - Duration of the call</li>
+<li><tt class="docutils literal"><span class="pre">billsec</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">progresssec</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">answersec</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">waitsec</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">disposition</span></tt> - Disposition of the call</li>
+<li><tt class="docutils literal"><span class="pre">hangup_cause</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">hangup_cause_q850</span></tt> -</li>
+</ul>
+</div></blockquote>
+<p><strong>Relationships</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">user</span></tt> - Foreign key relationship to the User model.</li>
+<li><tt class="docutils literal"><span class="pre">used_gateway</span></tt> - Foreign key relationship to the Gateway model.</li>
+<li><tt class="docutils literal"><span class="pre">callrequest</span></tt> - Foreign key relationship to the Callrequest model.</li>
+</ul>
+</div></blockquote>
+<p><strong>Name of DB table</strong>: dialer_cdr</p>
+<dl class="method">
+<dt id="dialer_cdr.models.VoIPCall.destination_name">
+<tt class="descname">destination_name</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_cdr.models.VoIPCall.destination_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return Recipient dialcode</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_cdr.models.VoIPCall.min_duration">
+<tt class="descname">min_duration</tt><big>(</big><big>)</big><a class="headerlink" href="#dialer_cdr.models.VoIPCall.min_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return duration in min &amp; sec</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-dialer_gateway.models"></span></div>
+<div class="section" id="gateway">
+<span id="gateway-model"></span><h2><a class="reference internal" href="#dialer_gateway.models.Gateway" title="dialer_gateway.models.Gateway"><tt class="xref py py-class docutils literal"><span class="pre">Gateway</span></tt></a><a class="headerlink" href="#gateway" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_gateway.models.Gateway">
+<em class="property">class </em><tt class="descclassname">dialer_gateway.models.</tt><tt class="descname">Gateway</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#dialer_gateway.models.Gateway" title="Permalink to this definition">¶</a></dt>
+<dd><p>This defines the trunk to deliver the Voip Calls.
+Each of the Gateways are routes that support different protocols and
+sets of rules to alter the dialed number.</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">name</span></tt> - Gateway name.</li>
+<li><tt class="docutils literal"><span class="pre">description</span></tt> - Description about the Gateway.</li>
+<li><tt class="docutils literal"><span class="pre">addprefix</span></tt> - Add prefix.</li>
+<li><tt class="docutils literal"><span class="pre">removeprefix</span></tt> - Remove prefix.</li>
+<li><tt class="docutils literal"><span class="pre">gateways</span></tt> - &#8220;user/,user&#8221;, # Gateway string to try dialing         separated by comma. First in the list will be tried first</li>
+<li><tt class="docutils literal"><span class="pre">gateway_codecs</span></tt> - &#8220;&#8216;PCMA,PCMU&#8217;,&#8217;PCMA,PCMU&#8217;&#8221;,         # Codec string as needed by FS for each gateway separated by comma</li>
+<li><tt class="docutils literal"><span class="pre">gateway_timeouts</span></tt> - &#8220;10,10&#8221;,         # Seconds to timeout in string for each gateway separated by comma</li>
+<li><tt class="docutils literal"><span class="pre">gateway_retries</span></tt> - &#8220;2,1&#8221;,         # Retry String for Gateways separated by comma,         on how many times each gateway should be retried</li>
+<li><tt class="docutils literal"><span class="pre">originate_dial_string</span></tt> - originate_dial_string</li>
+<li><tt class="docutils literal"><span class="pre">secondused</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">failover</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">addparameter</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">count_call</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">count_in_use</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">maximum_call</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">status</span></tt> - Gateway status</li>
+</ul>
+</div></blockquote>
+<p><strong>Name of DB table</strong>: dialer_gateway</p>
+</dd></dl>
+
+<span class="target" id="module-dialer_settings.models"></span></div>
+<div class="section" id="dialersetting">
+<span id="dialersetting-model"></span><h2><a class="reference internal" href="#dialer_settings.models.DialerSetting" title="dialer_settings.models.DialerSetting"><tt class="xref py py-class docutils literal"><span class="pre">DialerSetting</span></tt></a><a class="headerlink" href="#dialersetting" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_settings.models.DialerSetting">
+<em class="property">class </em><tt class="descclassname">dialer_settings.models.</tt><tt class="descname">DialerSetting</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#dialer_settings.models.DialerSetting" title="Permalink to this definition">¶</a></dt>
+<dd><p>This defines the settings to apply to a user</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">name</span></tt> - Settings name.</li>
+<li><tt class="docutils literal"><span class="pre">max_frequency</span></tt> - Max frequency, speed of the campaign.        This is the number of calls per minute.</li>
+<li><tt class="docutils literal"><span class="pre">callmaxduration</span></tt> - Max retries allowed</li>
+<li><tt class="docutils literal"><span class="pre">maxretry</span></tt> - Max retries allowed per user</li>
+<li><tt class="docutils literal"><span class="pre">max_calltimeout</span></tt> - Maximum number of seconds to timeout on calls</li>
+<li><tt class="docutils literal"><span class="pre">max_number_campaign</span></tt> - Max Number of campaigns</li>
+<li><tt class="docutils literal"><span class="pre">max_number_subscriber_campaign</span></tt> - Max Number of subscribera</li>
+<li><tt class="docutils literal"><span class="pre">blacklist</span></tt> - Used to blacklist phone numbers to be called</li>
+<li><tt class="docutils literal"><span class="pre">whitelist</span></tt> - Used to whitelist phone numbers to be called</li>
+</ul>
+</div></blockquote>
+<p><strong>Name of DB table</strong>: dialer_setting</p>
+</dd></dl>
+
+<span class="target" id="module-user_profile.models"></span></div>
+<div class="section" id="userprofile">
+<span id="userprofile-model"></span><h2><a class="reference internal" href="#user_profile.models.UserProfile" title="user_profile.models.UserProfile"><tt class="xref py py-class docutils literal"><span class="pre">UserProfile</span></tt></a><a class="headerlink" href="#userprofile" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="user_profile.models.UserProfile">
+<em class="property">class </em><tt class="descclassname">user_profile.models.</tt><tt class="descname">UserProfile</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#user_profile.models.UserProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This defines extra features for the user</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">accountcode</span></tt> - Account name.</li>
+</ul>
+</div></blockquote>
+<p><strong>Relationships</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">user</span></tt> - Foreign key relationship to the User model.</li>
+<li><tt class="docutils literal"><span class="pre">userprofile_gateway</span></tt> - ManyToMany</li>
+<li><tt class="docutils literal"><span class="pre">userprofile_voipservergroup</span></tt> - ManyToMany</li>
+<li><tt class="docutils literal"><span class="pre">dialersetting</span></tt> - Foreign key relationship to the DialerSetting         model.</li>
+</ul>
+</div></blockquote>
+<p><strong>Name of DB table</strong>: user_profile</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="database-design">
+<span id="id2"></span><h1>Database Design<a class="headerlink" href="#database-design" title="Permalink to this headline">¶</a></h1>
+<p>The current database schema is shown below:</p>
+<img alt="../_images/model_newfies.png" src="../_images/model_newfies.png" style="width: 1000px;" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Objects Description</a><ul>
+<li><a class="reference internal" href="#phonebook"><tt class="docutils literal"><span class="pre">Phonebook</span></tt></a></li>
+<li><a class="reference internal" href="#contact"><tt class="docutils literal"><span class="pre">Contact</span></tt></a></li>
+<li><a class="reference internal" href="#campaignmanager"><tt class="docutils literal"><span class="pre">CampaignManager</span></tt></a></li>
+<li><a class="reference internal" href="#campaign"><tt class="docutils literal"><span class="pre">Campaign</span></tt></a></li>
+<li><a class="reference internal" href="#campaignsubscriber"><tt class="docutils literal"><span class="pre">CampaignSubscriber</span></tt></a></li>
+<li><a class="reference internal" href="#callrequest"><tt class="docutils literal"><span class="pre">Callrequest</span></tt></a></li>
+<li><a class="reference internal" href="#voipcall"><tt class="docutils literal"><span class="pre">VoIPCall</span></tt></a></li>
+<li><a class="reference internal" href="#gateway"><tt class="docutils literal"><span class="pre">Gateway</span></tt></a></li>
+<li><a class="reference internal" href="#dialersetting"><tt class="docutils literal"><span class="pre">DialerSetting</span></tt></a></li>
+<li><a class="reference internal" href="#userprofile"><tt class="docutils literal"><span class="pre">UserProfile</span></tt></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#database-design">Database Design</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="coding-structure.html"
+                        title="previous chapter">Coding Style &amp; Structure</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="views.html"
+                        title="next chapter">Newfies-Dialer Views</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="views.html" title="Newfies-Dialer Views"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="coding-structure.html" title="Coding Style &amp; Structure"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.0.0 documentation</a> &raquo;</li>
+          <li><a href="../developer-doc.html" >Developer doc</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

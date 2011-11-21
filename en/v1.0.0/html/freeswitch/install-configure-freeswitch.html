@@ -1,0 +1,132 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Freeswitch Installation and configuration &mdash; Newfies-Dialer 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.0.0 documentation" href="../index.html" />
+    <link rel="up" title="FreeSwitch Installation and Configuration" href="../freeswitch-configuration.html" />
+    <link rel="next" title="Plivo Installation and configuration" href="install-plivo.html" />
+    <link rel="prev" title="FreeSwitch Installation and Configuration" href="../freeswitch-configuration.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="install-plivo.html" title="Plivo Installation and configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../freeswitch-configuration.html" title="FreeSwitch Installation and Configuration"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.0.0 documentation</a> &raquo;</li>
+          <li><a href="../freeswitch-configuration.html" accesskey="U">FreeSwitch Installation and Configuration</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="freeswitch-installation-and-configuration">
+<span id="install-configure-freeswitch"></span><h1>Freeswitch Installation and configuration<a class="headerlink" href="#freeswitch-installation-and-configuration" title="Permalink to this headline">¶</a></h1>
+<p>Freeswitch is the telephony engine used by Newfies-Dialer to make calls, as well as broadcast voice applications</p>
+<p>Newfies-Dialer communicates with Freeswitch though the Event-Socket. Communication is made via the Communications Framework <a class="reference external" href="http://www.plivo.org/">Plivo</a>.
+Our Freeswitch dependencies are the same as Plivo, therefore the following modules will need to be installed</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mod_curl</span><span class="p">,</span> <span class="n">asr_tts</span><span class="p">,</span> <span class="n">mod_flite</span><span class="p">,</span> <span class="n">asr_tts</span><span class="p">,</span> <span class="n">mod_shout</span><span class="p">,</span> <span class="n">mod_dingaling</span><span class="p">,</span> <span class="n">mod_shell_stream</span><span class="p">,</span> <span class="n">mod_xml_cdr</span>
+</pre></div>
+</div>
+<p>In order to retrieve CDR Status from the outbound calls, you will have to configure xml_cdr.conf.xml and point it to the Newfies API to store CDR, which is by default :
+<a class="reference external" href="http://hostname_newfies/api/dialer_cdr/store_cdr/">http://hostname_newfies/api/dialer_cdr/store_cdr/</a></p>
+<p>A script for Freeswitch Installation which will install Freeswitch with the required modules and configure it for you is available.</p>
+<p>Download and run the Freeswitch installation script.</p>
+<p>Once logged in as root, execute the following command:</p>
+<div class="highlight-python"><pre>wget https://raw.github.com/Star2Billing/newfies-dialer/master/install/install-freeswitch.sh</pre>
+</div>
+<p>The above commmand download the installation script. We can then execute the script with the following command:</p>
+<div class="highlight-python"><pre>bash install-freeswitch.sh</pre>
+</div>
+<p>This will download and install Freeswitch with the modules appropriate for Newfies-Dialer. The installation will take some time, but does not require your interaction once started.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../freeswitch-configuration.html"
+                        title="previous chapter">FreeSwitch Installation and Configuration</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="install-plivo.html"
+                        title="next chapter">Plivo Installation and configuration</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="install-plivo.html" title="Plivo Installation and configuration"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../freeswitch-configuration.html" title="FreeSwitch Installation and Configuration"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.0.0 documentation</a> &raquo;</li>
+          <li><a href="../freeswitch-configuration.html" >FreeSwitch Installation and Configuration</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>
