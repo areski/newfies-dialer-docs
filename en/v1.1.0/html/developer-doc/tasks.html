@@ -1,0 +1,169 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Newfies Tasks &mdash; Newfies-Dialer 1.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.1.0 documentation" href="../index.html" />
+    <link rel="up" title="Developer doc" href="../developer-doc.html" />
+    <link rel="next" title="Newfies Signals" href="signals.html" />
+    <link rel="prev" title="Newfies-Dialer Admin Views" href="admin-views.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="signals.html" title="Newfies Signals"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="admin-views.html" title="Newfies-Dialer Admin Views"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.1.0 documentation</a> &raquo;</li>
+          <li><a href="../developer-doc.html" accesskey="U">Developer doc</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-dialer_campaign.tasks">
+<span id="newfies-tasks"></span><span id="tasks"></span><h1>Newfies Tasks<a class="headerlink" href="#module-dialer_campaign.tasks" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="dialer_campaign.tasks.check_campaign_pendingcall">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.tasks.</tt><tt class="descname">check_campaign_pendingcall</tt><a class="headerlink" href="#dialer_campaign.tasks.check_campaign_pendingcall" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will execute the outbound calls in the campaign</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">campaign_id</span></tt> - Campaign ID</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="dialer_campaign.tasks.campaign_running">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.tasks.</tt><tt class="descname">campaign_running</tt><a class="headerlink" href="#dialer_campaign.tasks.campaign_running" title="Permalink to this definition">¶</a></dt>
+<dd><p>A periodic task that checks the campaign, create and tasks the calls</p>
+<p><strong>Usage</strong>:</p>
+<blockquote>
+<div>campaign_running.delay()</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="dialer_campaign.tasks.collect_subscriber">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.tasks.</tt><tt class="descname">collect_subscriber</tt><a class="headerlink" href="#dialer_campaign.tasks.collect_subscriber" title="Permalink to this definition">¶</a></dt>
+<dd><p>This task will collect all the subscribers</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">campaign_id</span></tt> - Campaign ID</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="dialer_cdr.tasks.init_callrequest">
+<em class="property">class </em><tt class="descclassname">dialer_cdr.tasks.</tt><tt class="descname">init_callrequest</tt><a class="headerlink" href="#dialer_cdr.tasks.init_callrequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>This task outbounds the call</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">callrequest_id</span></tt> - Callrequest ID</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="dialer_cdr.tasks.callrequest_pending">
+<em class="property">class </em><tt class="descclassname">dialer_cdr.tasks.</tt><tt class="descname">callrequest_pending</tt><a class="headerlink" href="#dialer_cdr.tasks.callrequest_pending" title="Permalink to this definition">¶</a></dt>
+<dd><p>A periodic task that checks for pending calls</p>
+<p><strong>Usage</strong>:</p>
+<blockquote>
+<div>callrequest_pending.delay()</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="admin-views.html"
+                        title="previous chapter">Newfies-Dialer Admin Views</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="signals.html"
+                        title="next chapter">Newfies Signals</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="signals.html" title="Newfies Signals"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="admin-views.html" title="Newfies-Dialer Admin Views"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.1.0 documentation</a> &raquo;</li>
+          <li><a href="../developer-doc.html" >Developer doc</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>BulkContactResource &mdash; Newfies-Dialer 1.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.1.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="next" title="CampaignSubscriberResource" href="campaign_subscriber_resource.html" />
+    <link rel="prev" title="PhonebookResource" href="phonebook_resource.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="campaign_subscriber_resource.html" title="CampaignSubscriberResource"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="phonebook_resource.html" title="PhonebookResource"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.1.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-api.resources"></span><div class="section" id="bulkcontactresource">
+<span id="bulkcontactresource-model"></span><h1><a class="reference internal" href="#api.resources.BulkContactResource" title="api.resources.BulkContactResource"><tt class="xref py py-class docutils literal"><span class="pre">BulkContactResource</span></tt></a><a class="headerlink" href="#bulkcontactresource" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="api.resources.BulkContactResource">
+<em class="property">class </em><tt class="descclassname">api.resources.</tt><tt class="descname">BulkContactResource</tt><big>(</big><em>api_name=None</em><big>)</big><a class="headerlink" href="#api.resources.BulkContactResource" title="Permalink to this definition">¶</a></dt>
+<dd><p>API to bulk create contacts</p>
+<p><strong>Attributes</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">contact</span></tt> - contact number of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">phonebook_id</span></tt> - the phonebook Id to which we want to add        the contact</li>
+</ul>
+</div></blockquote>
+<p><strong>Validation</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>BulkContactValidation()</li>
+</ul>
+</div></blockquote>
+<p><strong>CURL Usage</strong>:</p>
+<div class="highlight-python"><pre>curl -u username:password --dump-header - -H "Content-Type:application/json" -X POST --data '{"phonebook_id": "1", "phoneno_list" : "12345,54344"}' http://localhost:8000/api/v1/bulkcontact/</pre>
+</div>
+<p><strong>Response</strong>:</p>
+<div class="highlight-python"><pre>HTTP/1.0 201 CREATED
+Date: Thu, 13 Oct 2011 11:42:44 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Type: text/html; charset=utf-8
+Location: http://localhost:8000/api/v1/bulkcontact/None/
+Content-Language: en-us</pre>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="phonebook_resource.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">PhonebookResource</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="campaign_subscriber_resource.html"
+                        title="next chapter"><tt class="docutils literal"><span class="pre">CampaignSubscriberResource</span></tt></a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="campaign_subscriber_resource.html" title="CampaignSubscriberResource"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="phonebook_resource.html" title="PhonebookResource"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.1.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>
