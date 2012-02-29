@@ -1,0 +1,126 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Plivo Installation and configuration &mdash; Newfies-Dialer 1.2.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.2.0 documentation" href="../index.html" />
+    <link rel="up" title="FreeSwitch Installation and Configuration" href="../freeswitch-configuration.html" />
+    <link rel="next" title="Freeswitch Trunk configuration" href="trunk-configuration.html" />
+    <link rel="prev" title="Freeswitch Installation and configuration" href="install-configure-freeswitch.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="trunk-configuration.html" title="Freeswitch Trunk configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="install-configure-freeswitch.html" title="Freeswitch Installation and configuration"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.2.0 documentation</a> &raquo;</li>
+          <li><a href="../freeswitch-configuration.html" accesskey="U">FreeSwitch Installation and Configuration</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="plivo-installation-and-configuration">
+<span id="install-configure-plivo"></span><h1>Plivo Installation and configuration<a class="headerlink" href="#plivo-installation-and-configuration" title="Permalink to this headline">¶</a></h1>
+<p>When <a class="reference external" href="http://www.freeswitch.org/">Freeswitch</a> is installed, the next task is to install <a class="reference external" href="http://www.plivo.org/">Plivo</a>. Plivo is an open source communications framework to rapidly deploy voice based applications used in conjunction with Newfies-Dialer.</p>
+<p>Run the following commands:</p>
+<div class="highlight-python"><pre>wget https://raw.github.com/plivo/plivo/master/scripts/plivo_install_beta.sh</pre>
+</div>
+<p>then:</p>
+<div class="highlight-python"><pre>bash plivo_install_beta.sh /usr/share/plivo</pre>
+</div>
+<p>This will download and install Plivo and all its dependencies.
+We need to have Plivo start on boot, so run the following command to make it automatically start.</p>
+<p>ln -s /usr/share/plivo/bin/plivo /etc/rc2.d/S99plivo</p>
+<p>Please note that the Plivo script makes alterations to the Freeswitch dial-plan, so it should not be blindly run on an existing working Freeswitch installation, as it will change your current configuration. If you wish to install Plivo on an existing version of Freeswitch, use the script as a guide, or edit it to suit your requirements.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="install-configure-freeswitch.html"
+                        title="previous chapter">Freeswitch Installation and configuration</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="trunk-configuration.html"
+                        title="next chapter">Freeswitch Trunk configuration</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="trunk-configuration.html" title="Freeswitch Trunk configuration"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="install-configure-freeswitch.html" title="Freeswitch Installation and configuration"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.2.0 documentation</a> &raquo;</li>
+          <li><a href="../freeswitch-configuration.html" >FreeSwitch Installation and Configuration</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Freeswitch Trunk configuration &mdash; Newfies-Dialer 1.2.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.2.0 documentation" href="../index.html" />
+    <link rel="up" title="FreeSwitch Installation and Configuration" href="../freeswitch-configuration.html" />
+    <link rel="next" title="Developer doc" href="../developer-doc.html" />
+    <link rel="prev" title="Plivo Installation and configuration" href="install-plivo.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../developer-doc.html" title="Developer doc"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="install-plivo.html" title="Plivo Installation and configuration"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.2.0 documentation</a> &raquo;</li>
+          <li><a href="../freeswitch-configuration.html" accesskey="U">FreeSwitch Installation and Configuration</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="freeswitch-trunk-configuration">
+<span id="trunk-configuration"></span><h1>Freeswitch Trunk configuration<a class="headerlink" href="#freeswitch-trunk-configuration" title="Permalink to this headline">¶</a></h1>
+<p>In order for Newfies-Dialer to make outbound calls to its subscribers, you will need a SIP trunk. The Freeswitch wiki can provide more information on configuring trunks. However creating a trunk simply for Newfies-Dialer is straightforward.</p>
+<p>Trunks or gateways, as they are known in Freeswitch, are configured using XML syntax, so using your favourite text editor, while logged in as root “sudo su -” create an XML file in /usr/local/freeswitch/conf/sip_profiles/external/ and give it an identifiable name, e.g. call-labs.xml, and place the following lines in the file:</p>
+<div class="highlight-python"><pre>&lt;include&gt;
+&lt;gateway name="ip address or hostname of carrier"&gt;
+&lt;!--/// account username *required* ///--&gt;
+&lt;param name="username" value="your username provided by carrier"/&gt;
+&lt;!--/// auth realm: *optional* same as gateway name, if blank ///--&gt;
+&lt;!--&lt;param name="realm" value="asterlink.com"/&gt;--&gt;
+&lt;!--/// username to use in from: *optional* same as username, if blank ///--&gt;
+&lt;param name="from-user" value="your username provided by carrier"/&gt;
+&lt;!--/// domain to use in from: *optional* same as realm, if blank ///--&gt;
+&lt;!--param name="from-domain" value=""/--&gt;
+&lt;!--/// account password *required* ///--&gt;
+&lt;param name="password" value="your password supplied by carrier"/&gt;
+&lt;!--/// extension for inbound calls: *optional* same as username, if blank ///--&gt;
+&lt;!--&lt;param name="extension" value="cluecon"/&gt;--&gt;
+&lt;!--/// proxy host: *optional* same as realm, if blank ///--&gt;
+&lt;!--&lt;param name="proxy" value="asterlink.com"/&gt;--&gt;
+&lt;!--/// send register to this proxy: *optional* same as proxy, if blank ///--&gt;
+&lt;!--&lt;param name="register-proxy" value="mysbc.com"/&gt;--&gt;
+&lt;!--/// expire in seconds: *optional* 3600, if blank ///--&gt;
+&lt;!--&lt;param name="expire-seconds" value="60"/&gt;--&gt;
+&lt;!--/// do not register ///--&gt;
+&lt;param name="register" value="true"/&gt;
+&lt;!-- which transport to use for register --&gt;
+&lt;!--&lt;param name="register-transport" value="udp"/&gt;--&gt;
+&lt;!--How many seconds before a retry when a failure or timeout occurs --&gt;
+&lt;!--&lt;param name="retry-seconds" value="30"/&gt;--&gt;
+&lt;!--Use the callerid of an inbound call in the from field on outbound calls via this gateway --&gt;
+&lt;!--&lt;param name="caller-id-in-from" value="false"/&gt;--&gt;
+&lt;!--extra sip params to send in the contact--&gt;
+&lt;!--&lt;param name="contact-params" value="tport=tcp"/&gt;--&gt;
+&lt;!--send an options ping every x seconds, failure will unregister and/or mark it down--&gt;
+&lt;!--&lt;param name="ping" value="25"/&gt;--&gt;
+&lt;/gateway&gt;
+&lt;/include&gt;</pre>
+</div>
+<p>The uncommented lines are almost certainly required by your carrier and Freeswitch, the remaining parameters can be uncommented and used, if required by your carrier. The XML syntax for comments are denoted by lines that begin “ &lt;!&#8211; “ and end in “&#8211;&gt; “.</p>
+<p>Finally we need to load the new configuration, and check the trunk is registered.
+Enter the Freeswitch CLI (Command Line Interface) from the console:</p>
+<div class="highlight-python"><pre>/usr/local/freeswitch/bin/fs_cli</pre>
+</div>
+<p>You should now see the Freeswitch CLI, so now reload the Freeswitch configuration with the following command: (tip; Tab auto-completes):</p>
+<div class="highlight-python"><pre>sofia profile external restart reloadxml</pre>
+</div>
+<p>When complete, check the trunk has registered with the command:</p>
+<div class="highlight-python"><pre>sofia status</pre>
+</div>
+<p>Against the name of the trunk you configured in the XML file, you should see REGED (registered) at the end of the line. Take a note of the trunk name, we are going to need it for telling Newfies-Dialer that it can use this trunk.</p>
+<p>To exit the Freeswitch CLI, do CTRL D, or /exit</p>
+<p>Freeswitch configuration is now complete.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="install-plivo.html"
+                        title="previous chapter">Plivo Installation and configuration</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../developer-doc.html"
+                        title="next chapter">Developer doc</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../developer-doc.html" title="Developer doc"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="install-plivo.html" title="Plivo Installation and configuration"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.2.0 documentation</a> &raquo;</li>
+          <li><a href="../freeswitch-configuration.html" >FreeSwitch Installation and Configuration</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

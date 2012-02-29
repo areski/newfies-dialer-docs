@@ -1,0 +1,198 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CampaignSubscriberResource &mdash; Newfies-Dialer 1.2.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.2.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="next" title="CampaignSubscriberPerCampaignResource" href="campaign_subscriber_per_campaign_resource.html" />
+    <link rel="prev" title="BulkContactResource" href="bulk_contact_resource.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="campaign_subscriber_per_campaign_resource.html" title="CampaignSubscriberPerCampaignResource"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="bulk_contact_resource.html" title="BulkContactResource"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.2.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-api.resources"></span><div class="section" id="campaignsubscriberresource">
+<span id="campaignsubscriberresource-model"></span><h1><a class="reference internal" href="#api.resources.CampaignSubscriberResource" title="api.resources.CampaignSubscriberResource"><tt class="xref py py-class docutils literal"><span class="pre">CampaignSubscriberResource</span></tt></a><a class="headerlink" href="#campaignsubscriberresource" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="api.resources.CampaignSubscriberResource">
+<em class="property">class </em><tt class="descclassname">api.resources.</tt><tt class="descname">CampaignSubscriberResource</tt><big>(</big><em>api_name=None</em><big>)</big><a class="headerlink" href="#api.resources.CampaignSubscriberResource" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Attributes Details</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">contact</span></tt> - contact number of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">last_name</span></tt> - last name of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">first_name</span></tt> - first name of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">email</span></tt> - email id of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">description</span></tt> - Short description of the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">additional_vars</span></tt> - Additional settings for the Subscriber</li>
+<li><tt class="docutils literal"><span class="pre">phonebook_id</span></tt> - the phonebook Id to which we want to add        the Subscriber</li>
+</ul>
+</div></blockquote>
+<p><strong>Validation</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>CampaignSubscriberValidation()</li>
+</ul>
+</div></blockquote>
+<p><strong>Create</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password --dump-header - -H "Content-Type:application/json" -X POST --data '{"contact": "650784355", "last_name": "belaid", "first_name": "areski", "email": "areski@gmail.com", "phonebook_id" : "1"}' http://localhost:8000/api/v1/campaignsubscriber/</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><pre>HTTP/1.0 204 NO CONTENT
+Date: Wed, 18 May 2011 13:23:14 GMT
+Server: WSGIServer/0.1 Python/2.6.2
+Vary: Authorization
+Content-Length: 0
+Location: http://localhost:8000/api/v1/campaignsubscriber/1/
+Content-Type: text/plain</pre>
+</div>
+</div></blockquote>
+<p><strong>Read</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password -H 'Accept: application/json' http://localhost:8000/api/v1/campaignsubscriber/?format=json</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+   <span class="s">&quot;meta&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;limit&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+      <span class="s">&quot;next&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;offset&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+      <span class="s">&quot;previous&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;total_count&quot;</span><span class="p">:</span><span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="s">&quot;objects&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">&quot;count_attempt&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+         <span class="s">&quot;created_date&quot;</span><span class="p">:</span><span class="s">&quot;2012-01-17T03:58:49&quot;</span><span class="p">,</span>
+         <span class="s">&quot;duplicate_contact&quot;</span><span class="p">:</span><span class="s">&quot;123456789&quot;</span><span class="p">,</span>
+         <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+         <span class="s">&quot;last_attempt&quot;</span><span class="p">:</span><span class="s">&quot;2012-01-17T15:28:37&quot;</span><span class="p">,</span>
+         <span class="s">&quot;resource_uri&quot;</span><span class="p">:</span><span class="s">&quot;/api/v1/campaignsubscriber/1/&quot;</span><span class="p">,</span>
+         <span class="s">&quot;status&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+         <span class="s">&quot;updated_date&quot;</span><span class="p">:</span><span class="s">&quot;2012-02-07T02:22:19&quot;</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Update</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password --dump-header - -H "Content-Type: application/json" -X PUT --data '{"status": "2", "contact": "123546"}' http://localhost:8000/api/v1/campaignsubscriber/%campaign_id%/</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><pre>HTTP/1.0 204 NO CONTENT
+Date: Fri, 23 Sep 2011 06:46:12 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Length: 0
+Content-Type: text/html; charset=utf-8
+Content-Language: en-us</pre>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="bulk_contact_resource.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">BulkContactResource</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="campaign_subscriber_per_campaign_resource.html"
+                        title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">CampaignSubscriberPerCampaignResource</span></tt></a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="campaign_subscriber_per_campaign_resource.html" title="CampaignSubscriberPerCampaignResource"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="bulk_contact_resource.html" title="BulkContactResource"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.2.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

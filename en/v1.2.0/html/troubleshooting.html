@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Troubleshooting &mdash; Newfies-Dialer 1.2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.2.0 documentation" href="index.html" />
+    <link rel="next" title="Resources" href="resources.html" />
+    <link rel="prev" title="Frequently Asked Questions" href="faq.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="resources.html" title="Resources"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="faq.html" title="Frequently Asked Questions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Newfies-Dialer 1.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="troubleshooting">
+<span id="id1"></span><h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#where-to-find-help" id="id5">Where to find help</a></li>
+<li><a class="reference internal" href="#where-to-find-the-log-files" id="id6">Where to find the log files</a></li>
+<li><a class="reference internal" href="#how-to-run-a-quick-test-call" id="id7">How to run a quick test call</a></li>
+<li><a class="reference internal" href="#run-in-debug-mode" id="id8">Run in debug mode</a></li>
+<li><a class="reference internal" href="#celerymon" id="id9">Celerymon</a></li>
+<li><a class="reference internal" href="#how-to-discard-all-pending-tasks" id="id10">How to discard all pending tasks</a></li>
+<li><a class="reference internal" href="#checking-plivo-is-running" id="id11">Checking Plivo is running</a></li>
+<li><a class="reference internal" href="#checking-freeswitch" id="id12">Checking Freeswitch</a></li>
+<li><a class="reference internal" href="#step-by-step-checklist" id="id13">Step By Step Checklist</a></li>
+</ul>
+</div>
+<div class="section" id="where-to-find-help">
+<span id="find-help"></span><h2><a class="toc-backref" href="#id5">Where to find help</a><a class="headerlink" href="#where-to-find-help" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="documentation">
+<h3>Documentation:<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://www.newfies-dialer.org/documentation/">http://www.newfies-dialer.org/documentation/</a></p>
+</div>
+<div class="section" id="mailing-list">
+<h3>Mailing list:<a class="headerlink" href="#mailing-list" title="Permalink to this headline">¶</a></h3>
+<p>We have set up a mailing list at <a class="reference external" href="http://groups.google.com/group/newfies-dialer">http://groups.google.com/group/newfies-dialer</a></p>
+</div>
+<div class="section" id="forum">
+<h3>Forum:<a class="headerlink" href="#forum" title="Permalink to this headline">¶</a></h3>
+<p>We have a forum at <a class="reference external" href="http://forum.newfies-dialer.org/">http://forum.newfies-dialer.org/</a></p>
+</div>
+<div class="section" id="support">
+<h3>Support:<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>Star2Billing S.L. offers consultancy including installation, training and customisation</p>
+</div>
+</div>
+<div class="section" id="where-to-find-the-log-files">
+<span id="find-log-files"></span><h2><a class="toc-backref" href="#id6">Where to find the log files</a><a class="headerlink" href="#where-to-find-the-log-files" title="Permalink to this headline">¶</a></h2>
+<p>All the logs are centralized into one single directory <strong>/var/log/newfies/</strong></p>
+<p><strong>newfies-django-db.log</strong> : This contains all the Database queries performed by the UI</p>
+<p><strong>newfies-django.log</strong> : All the logger events from Django</p>
+<p><strong>err-apache-newfies.log</strong> : Any apache errors pertaining to Newfies-Dialer</p>
+<p><strong>celery-newfies-node1.log</strong> : This contains celery activity</p>
+</div>
+<div class="section" id="how-to-run-a-quick-test-call">
+<span id="run-quick-test-call"></span><h2><a class="toc-backref" href="#id7">How to run a quick test call</a><a class="headerlink" href="#how-to-run-a-quick-test-call" title="Permalink to this headline">¶</a></h2>
+<p>Go on the admin panel and check if there is any call request that has been spooled.</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://your-ip:8008/admin/dialer_cdr/callrequest/">http://your-ip:8008/admin/dialer_cdr/callrequest/</a></li>
+</ul>
+</div></blockquote>
+<p>If there are no calls queued, this means that the campaign is not properly configured.</p>
+<p>You should:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Check if the campaign is started that the &#8220;Start time&#8221;, &#8220;Finish Time&#8221; and server time are correct.</li>
+<li>Make sure that you configured a Dialer Setting for the user running the campaign, although there will be a warning for this on the Customer UI : <a class="reference external" href="http://your-ip:8008/admin/dialer_settings/dialersetting/">http://your-ip:8008/admin/dialer_settings/dialersetting/</a></li>
+</ol>
+</div></blockquote>
+<p>If there is an existing Call Request, check the status, and check the Celery log stored in /var/log/newfies</p>
+</div>
+<div class="section" id="run-in-debug-mode">
+<span id="run-debug-mode"></span><h2><a class="toc-backref" href="#id8">Run in debug mode</a><a class="headerlink" href="#run-in-debug-mode" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you stop the services first:</p>
+<div class="highlight-python"><pre>$ /etc/init.d/newfies-celeryd stop</pre>
+</div>
+<p>Then run in debug mode:</p>
+<div class="highlight-python"><pre>$ workon newfies-dialer
+$ cd /usr/share/newfies/
+$ python manage.py celeryd -EB --loglevel=DEBUG</pre>
+</div>
+</div>
+<div class="section" id="celerymon">
+<span id="id2"></span><h2><a class="toc-backref" href="#id9">Celerymon</a><a class="headerlink" href="#celerymon" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/ask/celerymon">https://github.com/ask/celerymon</a></li>
+</ul>
+<p>Running the monitor :</p>
+<dl class="docutils">
+<dt>Start celery with the &#8211;events option on, so celery sends events for celerymon to capture::</dt>
+<dd>$ workon newfies-dialer
+$ cd /usr/share/newfies/
+$ python manage.py celeryd -E</dd>
+</dl>
+<p>Run the monitor server:</p>
+<div class="highlight-python"><pre>$ workon newfies-dialer
+$ cd /usr/share/newfies/
+$ python manage.py celerymon</pre>
+</div>
+<p>However, in production you probably want to run the monitor in the background, as a daemon:</p>
+<div class="highlight-python"><pre>$ workon newfies-dialer
+$ cd /usr/share/newfies/
+$ python manage.py celerymon --detach</pre>
+</div>
+<p>For a complete listing of the command line arguments available, with a short description, you can use the help command:</p>
+<div class="highlight-python"><pre>$ workon newfies-dialer
+$ cd /usr/share/newfies/
+$ python manage.py help celerymon</pre>
+</div>
+<p>Now you can visit the webserver celerymon starts by going to: <a class="reference external" href="http://localhost:8989">http://localhost:8989</a></p>
+</div>
+<div class="section" id="how-to-discard-all-pending-tasks">
+<span id="discard-pending-tasks"></span><h2><a class="toc-backref" href="#id10">How to discard all pending tasks</a><a class="headerlink" href="#how-to-discard-all-pending-tasks" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://docs.celeryproject.org/en/latest/faq.html?highlight=purge#how-do-i-discard-all-waiting-tasks">http://docs.celeryproject.org/en/latest/faq.html?highlight=purge#how-do-i-discard-all-waiting-tasks</a></p>
+</div>
+<div class="section" id="checking-plivo-is-running">
+<span id="checking-plivo-running"></span><h2><a class="toc-backref" href="#id11">Checking Plivo is running</a><a class="headerlink" href="#checking-plivo-is-running" title="Permalink to this headline">¶</a></h2>
+<p>At the command line, type:</p>
+<div class="highlight-python"><pre>$ ps aux | grep plivo</pre>
+</div>
+<p>This should tell you that Plivo-rest, Plivo-Outbound and Plivo-cache are all running. If they are not, these services can be restarted with the following commands:</p>
+<div class="highlight-python"><pre>$ /etc/init.d/plivo stop
+$ /etc/init.d/plivocache stop
+$ /etc/init.d/plivo start
+$ /etc/init.d/plivocache start</pre>
+</div>
+<p>If there are still issues with Plivo, then check the logs for clues at <strong>/usr/share/plivo/tmp/</strong></p>
+</div>
+<div class="section" id="checking-freeswitch">
+<span id="id3"></span><h2><a class="toc-backref" href="#id12">Checking Freeswitch</a><a class="headerlink" href="#checking-freeswitch" title="Permalink to this headline">¶</a></h2>
+<p>Entering the Freeswitch CLI shold indicate whether it is running by typing fs_cli at the console. Once logged in, you can check the trunk registration by typing sofia status at the Freeswitch CLI. CTRL-D exits the Freeswitch CLI.</p>
+<p>If the Freeswitch CLI cannot be launched, then the status of freeswitch can be checked with:</p>
+<div class="highlight-python"><pre>$ ps aux | grep freeswitch
+or
+$ /etc/init.d/freeswitch status</pre>
+</div>
+<p>If Freeswitch is not running, then it can be started with</p>
+<div class="highlight-python"><pre>$ /etc/init.d/freeswitch start</pre>
+</div>
+</div>
+<div class="section" id="step-by-step-checklist">
+<span id="id4"></span><h2><a class="toc-backref" href="#id13">Step By Step Checklist</a><a class="headerlink" href="#step-by-step-checklist" title="Permalink to this headline">¶</a></h2>
+<p>The step by step checklist below should be used to validate that all components of the platform are running.</p>
+<p>User interface :</p>
+<blockquote>
+<div><ul class="simple">
+<li><ol class="first arabic">
+<li>Dialer Gateway matching a configured trunk is set up in the UI</li>
+</ol>
+</li>
+<li><ol class="first arabic" start="2">
+<li>Dialer Settings configured and attached to the appropriate user</li>
+</ol>
+</li>
+<li><ol class="first arabic" start="3">
+<li>Phonebook Created with contacts attached to the phonebook</li>
+</ol>
+</li>
+<li><ol class="first arabic" start="4">
+<li>Configured voice application</li>
+</ol>
+</li>
+<li><ol class="first arabic" start="5">
+<li>Campaign created, and started, with a phone book attached, and the campaign schedule current</li>
+</ol>
+</li>
+</ul>
+</div></blockquote>
+<p>Backend :</p>
+<blockquote>
+<div><ul class="simple">
+<li><ol class="first arabic">
+<li>Celery Monitor Running</li>
+</ol>
+</li>
+<li><ol class="first arabic" start="2">
+<li>Plivo Running</li>
+</ol>
+</li>
+<li><ol class="first arabic" start="3">
+<li>Freeswitch running</li>
+</ol>
+</li>
+</ul>
+</div></blockquote>
+<p>If there are still problems, then raise a support question on the mailing-list <a class="reference external" href="http://groups.google.com/group/newfies-dialer">http://groups.google.com/group/newfies-dialer</a> or our forum, <a class="reference external" href="http://forum.newfies-dialer.org/">http://forum.newfies-dialer.org/</a>, alternatively, contact <a class="reference external" href="mailto:newfies-dialer&#37;&#52;&#48;star2billing&#46;com">newfies-dialer<span>&#64;</span>star2billing<span>&#46;</span>com</a> for commercial support.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Troubleshooting</a><ul>
+<li><a class="reference internal" href="#where-to-find-help">Where to find help</a><ul>
+<li><a class="reference internal" href="#documentation">Documentation:</a></li>
+<li><a class="reference internal" href="#mailing-list">Mailing list:</a></li>
+<li><a class="reference internal" href="#forum">Forum:</a></li>
+<li><a class="reference internal" href="#support">Support:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#where-to-find-the-log-files">Where to find the log files</a></li>
+<li><a class="reference internal" href="#how-to-run-a-quick-test-call">How to run a quick test call</a></li>
+<li><a class="reference internal" href="#run-in-debug-mode">Run in debug mode</a></li>
+<li><a class="reference internal" href="#celerymon">Celerymon</a></li>
+<li><a class="reference internal" href="#how-to-discard-all-pending-tasks">How to discard all pending tasks</a></li>
+<li><a class="reference internal" href="#checking-plivo-is-running">Checking Plivo is running</a></li>
+<li><a class="reference internal" href="#checking-freeswitch">Checking Freeswitch</a></li>
+<li><a class="reference internal" href="#step-by-step-checklist">Step By Step Checklist</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="faq.html"
+                        title="previous chapter">Frequently Asked Questions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="resources.html"
+                        title="next chapter">Resources</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="resources.html" title="Resources"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="faq.html" title="Frequently Asked Questions"
+             >previous</a> |</li>
+        <li><a href="index.html">Newfies-Dialer 1.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>
