@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sample Configuration &mdash; Newfies-Dialer 1.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.4.0 documentation" href="index.html" />
+    <link rel="up" title="Configuration and Defaults" href="configuration-defaults.html" />
+    <link rel="next" title="Celery Configuration" href="celery/celery-configuration.html" />
+    <link rel="prev" title="Configuration and Defaults" href="configuration-defaults.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="celery/celery-configuration.html" title="Celery Configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="configuration-defaults.html" title="Configuration and Defaults"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Newfies-Dialer 1.4.0 documentation</a> &raquo;</li>
+          <li><a href="configuration-defaults.html" accesskey="U">Configuration and Defaults</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+
+    <div class="section" id="sample-configuration">
+<span id="conf-example"></span><h1>Sample Configuration<a class="headerlink" href="#sample-configuration" title="Permalink to this headline">¶</a></h1>
+<p>This is a sample configuration to get you started.
+It should contain all you need to create a basic set-up.</p>
+<div class="section" id="the-configuration-module">
+<h2>The Configuration Module<a class="headerlink" href="#the-configuration-module" title="Permalink to this headline">¶</a></h2>
+<p>Some of the more important parts of the configuration module for the Newfies,
+<tt class="docutils literal"><span class="pre">settings.py</span></tt>, are explained below:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os.path</span>
+<span class="n">APPLICATION_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="nb">globals</span><span class="p">()[</span><span class="s">&#39;__file__&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">APPLICATION_DIR</span></tt> now contains the full path of your project folder and can be used elsewhere
+in the <tt class="docutils literal"><span class="pre">settings.py</span></tt> module so that your project may be moved around the system without you having to
+worry about changing any troublesome hard-coded paths.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DEBUG</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>turns on debug mode allowing the browser user to see project settings and temporary variables.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ADMINS</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="s">&#39;xyz&#39;</span><span class="p">,</span> <span class="s">&#39;xyz@abc.com&#39;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>sends all errors from the production server to the admin&#8217;s email address.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DATABASE_ENGINE</span> <span class="o">=</span> <span class="s">&#39;mysql&#39;</span>
+<span class="n">DATABASE_NAME</span> <span class="o">=</span> <span class="s">&#39;db-name&#39;</span>
+<span class="n">DATABASE_USER</span> <span class="o">=</span> <span class="s">&#39;user&#39;</span>
+<span class="n">DATABASE_PASSWORD</span> <span class="o">=</span> <span class="s">&#39;password&#39;</span>
+<span class="n">DATABASE_HOST</span> <span class="o">=</span> <span class="s">&#39;mysql-host&#39;</span>
+<span class="n">DATABASE_PORT</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+</pre></div>
+</div>
+<p>sets up the options required for Django to connect to your database.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">APPLICATION_DIR</span><span class="p">,</span> <span class="s">&#39;static&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>tells Django where to find your media files such as images that the <tt class="docutils literal"><span class="pre">HTML</span>
+<span class="pre">templates</span></tt> might use.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ROOT_URLCONF</span> <span class="o">=</span> <span class="s">&#39;urls&#39;</span>
+</pre></div>
+</div>
+<p>tells Django to start finding URL matches at in the <tt class="docutils literal"><span class="pre">urls.py</span></tt> module in the <tt class="docutils literal"><span class="pre">newfies</span></tt> project folder.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">TEMPLATE_DIRS</span> <span class="o">=</span> <span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">APPLICATION_DIR</span><span class="p">,</span> <span class="s">&#39;templates&#39;</span><span class="p">),</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>tells Django where to find your HTML template files.</p>
+<div class="highlight-python"><pre> INSTALLED_APPS = (
+'django.contrib.auth',
+'django.contrib.contenttypes',
+'django.contrib.sessions',
+'django.contrib.sites',
+'django.contrib.admin',
+...
+'dialer_gateway',
+'dialer_campaign',
+'dialer_cdr',
+'dialer_settings',
+'user_profile',
+'voip_server',
+'voip_app',
+...
+)</pre>
+</div>
+<p>tells Django which applications (custom and external) to use in your project.
+The custom applications, <tt class="docutils literal"><span class="pre">dialer_gateway</span></tt>, <tt class="docutils literal"><span class="pre">dialer_campaign</span></tt> etc. are stored
+in the project folder along with these custom applications.</p>
+</div>
+<div class="section" id="the-urls-modules">
+<h2>The URLs modules<a class="headerlink" href="#the-urls-modules" title="Permalink to this headline">¶</a></h2>
+<p>The defined URL patterns for the CPI Pilot project are divided into URL patterns specific to the project and URL patterns specific to the applications. For more information on how the pattern matching syntax work or how to write your own url patterns please consult Django&#8217;s <a class="reference external" href="http://docs.djangoproject.com/en/dev/topics/http/urls/">URL Dispatcher</a> documentation.</p>
+<div class="section" id="project-specific-url-patterns">
+<h3>Project specific URL patterns<a class="headerlink" href="#project-specific-url-patterns" title="Permalink to this headline">¶</a></h3>
+<p>The URL patterns specific to the project are applied in the <tt class="docutils literal"><span class="pre">urls.py</span></tt> file that is
+stored in the project directory <tt class="docutils literal"><span class="pre">newfies</span></tt>. The code segments that add these URL
+patterns aren&#8217;t lengthy and are shown below:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+  <span class="c"># redirect</span>
+  <span class="p">(</span><span class="s">&#39;^$&#39;</span><span class="p">,</span> <span class="s">&#39;django.views.generic.simple.redirect_to&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;url&#39;</span><span class="p">:</span> <span class="s">&#39;/dialer_campaign/&#39;</span><span class="p">}),</span>
+  <span class="p">(</span><span class="s">r&#39;^admin/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
+  <span class="p">(</span><span class="s">r&#39;^api/dialer_campaign/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">&#39;dialer_campaign.api.urls&#39;</span><span class="p">)),</span>
+  <span class="p">(</span><span class="s">r&#39;^dialer_campaign/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">&#39;dialer_campaign.urls&#39;</span><span class="p">)),</span>
+  <span class="p">(</span><span class="s">r&#39;^static/(?P&lt;path&gt;.*)$&#39;</span><span class="p">,</span> <span class="s">&#39;django.views.static.serve&#39;</span><span class="p">,</span>
+      <span class="p">{</span><span class="s">&#39;document_root&#39;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">STATIC_ROOT</span><span class="p">}),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="application-specific-url-patterns">
+<h3>Application specific URL patterns<a class="headerlink" href="#application-specific-url-patterns" title="Permalink to this headline">¶</a></h3>
+<p>The URL patterns specific to the dialer_campaign application are applied in the
+<tt class="docutils literal"><span class="pre">/dialer_campaign/urls.py</span></tt> file in the dialer_campaign application folder.
+The code segment that adds these URL patterns isn&#8217;t lengthy either and is shown below:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;dialer_campaign.views&#39;</span><span class="p">,</span>
+  <span class="p">(</span><span class="s">r&#39;^phonebook/$&#39;</span><span class="p">,</span> <span class="s">&#39;phonebook_list&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="s">r&#39;^phonebook/add/$&#39;</span><span class="p">,</span> <span class="s">&#39;phonebook_add&#39;</span><span class="p">),</span>
+  <span class="p">(</span><span class="s">r&#39;^phonebook/(.+)/$&#39;</span><span class="p">,</span> <span class="s">&#39;phonebook_change&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-views-module">
+<h2>The Views module<a class="headerlink" href="#the-views-module" title="Permalink to this headline">¶</a></h2>
+<p>The functions defined in <tt class="docutils literal"><span class="pre">views.py</span></tt> represent the logic behind the webpages.
+The view functions (called through the URL matching) decide which data structures need to
+be constructed and sent through to the HTML templates.
+To do this, each view function uses Django&#8217;s object relational model (ORM) to query
+the database picking out what is needed for any particular page.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@login_required</span>
+<span class="k">def</span> <span class="nf">phonebook_add</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add new Phonebook</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">PhonebookForm</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">PhonebookForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">obj</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s">&quot;msg&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s">&#39;&quot;</span><span class="si">%s</span><span class="s">&quot; is added.&#39;</span> <span class="o">%</span>\
+            <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s">&#39;/dialer_campaign/phonebook/&#39;</span><span class="p">)</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="s">&#39;dialer_campaign/phonebook/change.html&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+       <span class="s">&#39;form&#39;</span><span class="p">:</span> <span class="n">form</span><span class="p">,</span>
+       <span class="s">&#39;action&#39;</span><span class="p">:</span> <span class="s">&#39;add&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span>
+           <span class="n">context_instance</span><span class="o">=</span><span class="n">RequestContext</span><span class="p">(</span><span class="n">request</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-admin-module">
+<h2>The Admin Module<a class="headerlink" href="#the-admin-module" title="Permalink to this headline">¶</a></h2>
+<p>The classes defined in <tt class="docutils literal"><span class="pre">admin.py</span></tt> tell Django what attributes
+are visible and modifiable from the admin site.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">get_urls</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">urls</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">VoiceAppAdmin</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_urls</span><span class="p">()</span>
+    <span class="n">my_urls</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="s">r&#39;^add/$&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">admin_site</span><span class="o">.</span><span class="n">admin_view</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">add_view</span><span class="p">)),</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">my_urls</span> <span class="o">+</span> <span class="n">urls</span>
+
+<span class="k">def</span> <span class="nf">add_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">extra_context</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">ctx</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">&#39;app_label&#39;</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s">&#39;Voice&#39;</span><span class="p">),</span>
+        <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s">&#39;Add Voice&#39;</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">VoiceAppAdmin</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>\
+           <span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">extra_context</span><span class="o">=</span><span class="n">ctx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="index.html">
+  <img class="logo" src="https://github.com/Star2Billing/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="configuration-defaults.html"
+                        title="previous chapter">Configuration and Defaults</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="celery/celery-configuration.html"
+                        title="next chapter">Celery Configuration</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="celery/celery-configuration.html" title="Celery Configuration"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="configuration-defaults.html" title="Configuration and Defaults"
+             >previous</a> |</li>
+        <li><a href="index.html">Newfies-Dialer 1.4.0 documentation</a> &raquo;</li>
+          <li><a href="configuration-defaults.html" >Configuration and Defaults</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

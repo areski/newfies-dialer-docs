@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Coding Style &amp; Structure &mdash; Newfies-Dialer 1.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.4.0 documentation" href="../index.html" />
+    <link rel="up" title="Developer doc" href="../developer-doc.html" />
+    <link rel="next" title="Objects Description" href="objects-description.html" />
+    <link rel="prev" title="Prerequisites" href="pre-requisite.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="objects-description.html" title="Objects Description"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pre-requisite.html" title="Prerequisites"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.4.0 documentation</a> &raquo;</li>
+          <li><a href="../developer-doc.html" accesskey="U">Developer doc</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+
+    <div class="section" id="coding-style-structure">
+<span id="coding-structure"></span><h1>Coding Style &amp; Structure<a class="headerlink" href="#coding-style-structure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="style">
+<h2>Style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h2>
+<p>Coding follows the <a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">PEP 8 Style Guide for Python Code</a>.</p>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
+<p>The newfies directory:</p>
+<div class="highlight-python"><pre>|-- custom_admin_tools - The code for admin dashboard/menu
+|-- api                - The code for APIs
+|-- dialer_campaign    - The code for dialer campaign
+|   `-- fixtures
+|-- dialer_cdr         - This defines the call request &amp; its information
+|   `-- fixtures
+|-- dialer_gateway     - This defines the trunk to deliver the VoIP Calls
+|   `-- fixtures
+|-- dialer_settings    - This defines sets of settings to apply on user
+|-- voice_app          - This defines application that are defined on the platform
+|   `-- fixtures
+|-- survey
+|   `-- fixtures
+|-- static
+|   |-- newfies
+|   |    |-- css
+|   |    |-- js
+|   |    |-- icons
+|   |    `-- images
+|-- user_profile       - The code for user profile to extend auth model of Django
+|-- resources          - This area is used to hold media files
+|-- usermedia          - This folder is used to upload audio files
+`-- templates          - This area is used to override templates
+    |-- admin
+    |   |-- dialer_campaign
+    |   `-- dialer_cdr
+    |-- admin_tools
+    |-- registration
+    |-- memcache_status
+    `-- frontend</pre>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/Star2Billing/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pre-requisite.html"
+                        title="previous chapter">Prerequisites</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="objects-description.html"
+                        title="next chapter">Objects Description</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="objects-description.html" title="Objects Description"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pre-requisite.html" title="Prerequisites"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.4.0 documentation</a> &raquo;</li>
+          <li><a href="../developer-doc.html" >Developer doc</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>
