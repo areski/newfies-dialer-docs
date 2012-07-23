@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CampaignResource &mdash; Newfies-Dialer 1.5.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.5.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="next" title="CampaignDeleteCascadeResource" href="campaign_delete_cascade_resource.html" />
+    <link rel="prev" title="API Reference" href="../api-reference.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="campaign_delete_cascade_resource.html" title="CampaignDeleteCascadeResource"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../api-reference.html" title="API Reference"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.5.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+
+    <span class="target" id="module-api.campaign_api"></span><div class="section" id="campaignresource">
+<span id="campaignresource-model"></span><h1><a class="reference internal" href="#api.campaign_api.CampaignResource" title="api.campaign_api.CampaignResource"><tt class="xref py py-class docutils literal"><span class="pre">CampaignResource</span></tt></a><a class="headerlink" href="#campaignresource" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="api.campaign_api.CampaignResource">
+<em class="property">class </em><tt class="descclassname">api.campaign_api.</tt><tt class="descname">CampaignResource</tt><big>(</big><em>api_name=None</em><big>)</big><a class="headerlink" href="#api.campaign_api.CampaignResource" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">campaign_code</span></tt> - Auto-generated campaign code</li>
+<li><tt class="docutils literal"><span class="pre">name</span></tt> - Name of the Campaign</li>
+<li><tt class="docutils literal"><span class="pre">description</span></tt> - Short description of the Campaign</li>
+<li><tt class="docutils literal"><span class="pre">callerid</span></tt> - Caller ID</li>
+<li><tt class="docutils literal"><span class="pre">startingdate</span></tt> - Start date. Epoch Time, ie 1301414368</li>
+<li><tt class="docutils literal"><span class="pre">expirationdate</span></tt> - Expiry date. Epoch Time, ie 1301414368</li>
+<li><tt class="docutils literal"><span class="pre">daily_start_time</span></tt> - Daily start time, default &#8216;00:00:00&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">daily_stop_time</span></tt> - Daily stop time, default &#8216;23:59:59&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">monday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">tuesday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">wednesday</span></tt> - Set to 1 if you want to run this day of the week            , default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">thursday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">friday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">saturday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+<li><tt class="docutils literal"><span class="pre">sunday</span></tt> - Set to 1 if you want to run this day of the week,            default &#8216;1&#8217;</li>
+</ul>
+</div></blockquote>
+<p><strong>Campaign Settings</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">frequency</span></tt> - Defines the frequency, speed of the campaign.                              This is the number of calls per minute.</li>
+<li><tt class="docutils literal"><span class="pre">callmaxduration</span></tt> - Maximum call duration.</li>
+<li><tt class="docutils literal"><span class="pre">maxretry</span></tt> - Defines the max retries allowed per user.</li>
+<li><tt class="docutils literal"><span class="pre">intervalretry</span></tt> - Defines the time to wait between retries                                  in seconds</li>
+<li><tt class="docutils literal"><span class="pre">calltimeout</span></tt> - Set seconds of call timeout</li>
+</ul>
+</div></blockquote>
+<p><strong>Gateways</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">aleg_gateway</span></tt> - Defines the Gateway to use to call the                                 subscriber</li>
+<li><tt class="docutils literal"><span class="pre">content_type</span></tt> - Defines the application (<tt class="docutils literal"><span class="pre">voice_app</span></tt>                                 or <tt class="docutils literal"><span class="pre">survey</span></tt>) to use when the                                 call is established on the A-Leg</li>
+<li><tt class="docutils literal"><span class="pre">object_id</span></tt> - Defines the object of content_type application</li>
+<li><tt class="docutils literal"><span class="pre">extra_data</span></tt> - Defines the additional data to pass to the                                application</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Validation</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>CampaignValidation()</li>
+</ul>
+</div></blockquote>
+<p><strong>Create</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password --dump-header - -H "Content-Type:application/json" -X POST --data '{"name": "mycampaign", "description": "", "callerid": "1239876", "startingdate": "1301392136.0", "expirationdate": "1301332136.0", "frequency": "20", "callmaxduration": "50", "maxretry": "3", "intervalretry": "3000", "calltimeout": "45", "aleg_gateway": "1", "content_type": "voice_app", "object_id" : "1", "extra_data": "2000", "phonebook_id": "1"}' http://localhost:8000/api/v1/campaign/</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><pre>HTTP/1.0 200 OK
+Date: Thu, 08 Dec 2011 13:05:50 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Type: text/html; charset=utf-8
+Location: http://localhost:8000/api/app/campaign/1/
+Content-Language: en-us</pre>
+</div>
+</div></blockquote>
+<p><strong>Read</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password -H 'Accept: application/json' http://localhost:8000/api/v1/campaign/?format=json</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+   <span class="s">&quot;meta&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;limit&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+      <span class="s">&quot;next&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;offset&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+      <span class="s">&quot;previous&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;total_count&quot;</span><span class="p">:</span><span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="s">&quot;objects&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">&quot;callerid&quot;</span><span class="p">:</span><span class="s">&quot;123987&quot;</span><span class="p">,</span>
+         <span class="s">&quot;callmaxduration&quot;</span><span class="p">:</span><span class="mi">1800</span><span class="p">,</span>
+         <span class="s">&quot;calltimeout&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span>
+         <span class="s">&quot;campaign_code&quot;</span><span class="p">:</span><span class="s">&quot;XIUER&quot;</span><span class="p">,</span>
+         <span class="s">&quot;created_date&quot;</span><span class="p">:</span><span class="s">&quot;2011-06-15T00:49:16&quot;</span><span class="p">,</span>
+         <span class="s">&quot;daily_start_time&quot;</span><span class="p">:</span><span class="s">&quot;00:00:00&quot;</span><span class="p">,</span>
+         <span class="s">&quot;daily_stop_time&quot;</span><span class="p">:</span><span class="s">&quot;23:59:59&quot;</span><span class="p">,</span>
+         <span class="s">&quot;description&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+         <span class="s">&quot;expirationdate&quot;</span><span class="p">:</span><span class="s">&quot;2011-06-22T00:01:15&quot;</span><span class="p">,</span>
+         <span class="s">&quot;extra_data&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+         <span class="s">&quot;frequency&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span>
+         <span class="s">&quot;friday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+         <span class="s">&quot;intervalretry&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
+         <span class="s">&quot;maxretry&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
+         <span class="s">&quot;monday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;Default_Campaign&quot;</span><span class="p">,</span>
+         <span class="s">&quot;resource_uri&quot;</span><span class="p">:</span><span class="s">&quot;/api/app/campaign/1/&quot;</span><span class="p">,</span>
+         <span class="s">&quot;saturday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s">&quot;startingdate&quot;</span><span class="p">:</span><span class="s">&quot;2011-06-15T00:01:15&quot;</span><span class="p">,</span>
+         <span class="s">&quot;status&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+         <span class="s">&quot;sunday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s">&quot;thursday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s">&quot;tuesday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s">&quot;updated_date&quot;</span><span class="p">:</span><span class="s">&quot;2011-06-15T00:49:16&quot;</span><span class="p">,</span>
+         <span class="s">&quot;content_type&quot;</span><span class="p">:</span><span class="s">&quot;/api/v1/contrib/contenttype/1/&quot;</span><span class="p">,</span>
+         <span class="s">&quot;object_id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+         <span class="s">&quot;wednesday&quot;</span><span class="p">:</span><span class="n">true</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Update</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password --dump-header - -H "Content-Type: application/json" -X PUT --data '{"name": "mylittlecampaign", "description": "", "callerid": "1239876", "startingdate": "1301392136.0", "expirationdate": "1301332136.0","frequency": "20", "callmaxduration": "50", "maxretry": "3", "intervalretry": "3000", "calltimeout": "60", "aleg_gateway": "1", "content_type": "survey", "object_id" : "1", "extra_data": "2000" }' http://localhost:8000/api/v1/campaign/%campaign_id%/</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><pre>HTTP/1.0 204 NO CONTENT
+Date: Fri, 23 Sep 2011 06:46:12 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Length: 0
+Content-Type: text/html; charset=utf-8
+Content-Language: en-us</pre>
+</div>
+</div></blockquote>
+<p><strong>Delete</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password --dump-header - -H "Content-Type: application/json" -X DELETE  http://localhost:8000/api/v1/campaign/%campaign_id%/
+
+curl -u username:password --dump-header - -H "Content-Type: application/json" -X DELETE  http://localhost:8000/api/v1/campaign/</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><pre>HTTP/1.0 204 NO CONTENT
+Date: Fri, 23 Sep 2011 06:48:03 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Length: 0
+Content-Type: text/html; charset=utf-8
+Content-Language: en-us</pre>
+</div>
+</div></blockquote>
+<p><strong>Search</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password -H 'Accept: application/json' http://localhost:8000/api/v1/campaign/?name=mycampaign2</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+   <span class="s">&quot;meta&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;limit&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+      <span class="s">&quot;next&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;offset&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+      <span class="s">&quot;previous&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;total_count&quot;</span><span class="p">:</span><span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="s">&quot;objects&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">&quot;aleg_gateway&quot;</span><span class="p">:{</span>
+
+            <span class="s">&quot;created_date&quot;</span><span class="p">:</span><span class="s">&quot;2011-06-15T00:28:52&quot;</span><span class="p">,</span>
+            <span class="s">&quot;description&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+            <span class="s">&quot;maximum_call&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;Default_Gateway&quot;</span><span class="p">,</span>
+         <span class="p">},</span>
+         <span class="s">&quot;callerid&quot;</span><span class="p">:</span><span class="s">&quot;1239876&quot;</span><span class="p">,</span>
+         <span class="s">&quot;callmaxduration&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span>
+         <span class="s">&quot;calltimeout&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span>
+         <span class="s">&quot;campaign_code&quot;</span><span class="p">:</span><span class="s">&quot;DJZVK&quot;</span><span class="p">,</span>
+         <span class="s">&quot;created_date&quot;</span><span class="p">:</span><span class="s">&quot;2011-10-13T02:06:22&quot;</span><span class="p">,</span>
+         <span class="s">&quot;daily_start_time&quot;</span><span class="p">:</span><span class="s">&quot;00:00:00&quot;</span><span class="p">,</span>
+         <span class="s">&quot;daily_stop_time&quot;</span><span class="p">:</span><span class="s">&quot;23:59:59&quot;</span><span class="p">,</span>
+         <span class="s">&quot;description&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+         <span class="s">&quot;expirationdate&quot;</span><span class="p">:</span><span class="s">&quot;2011-03-28T17:08:56&quot;</span><span class="p">,</span>
+         <span class="s">&quot;extra_data&quot;</span><span class="p">:</span><span class="s">&quot;2000&quot;</span><span class="p">,</span>
+         <span class="s">&quot;frequency&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+         <span class="s">&quot;friday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;16&quot;</span><span class="p">,</span>
+         <span class="s">&quot;intervalretry&quot;</span><span class="p">:</span><span class="mi">3000</span><span class="p">,</span>
+         <span class="s">&quot;maxretry&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
+         <span class="s">&quot;monday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;mycampaign2&quot;</span><span class="p">,</span>
+         <span class="s">&quot;resource_uri&quot;</span><span class="p">:</span><span class="s">&quot;/api/v1/campaign/16/&quot;</span><span class="p">,</span>
+         <span class="s">&quot;saturday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s">&quot;startingdate&quot;</span><span class="p">:</span><span class="s">&quot;2011-03-29T09:48:56&quot;</span><span class="p">,</span>
+         <span class="s">&quot;status&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+         <span class="s">&quot;sunday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s">&quot;thursday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s">&quot;tuesday&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+         <span class="s">&quot;updated_date&quot;</span><span class="p">:</span><span class="s">&quot;2011-10-13T02:06:22&quot;</span><span class="p">,</span>
+         <span class="s">&quot;user&quot;</span><span class="p">:{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+            <span class="s">&quot;username&quot;</span><span class="p">:</span><span class="s">&quot;areski&quot;</span>
+         <span class="p">},</span>
+         <span class="s">&quot;content_type&quot;</span><span class="p">:</span><span class="s">&quot;/api/v1/contrib/contenttype/1/&quot;</span><span class="p">,</span>
+         <span class="s">&quot;object_id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+         <span class="s">&quot;wednesday&quot;</span><span class="p">:</span><span class="n">true</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/Star2Billing/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../api-reference.html"
+                        title="previous chapter">API Reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="campaign_delete_cascade_resource.html"
+                        title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">CampaignDeleteCascadeResource</span></tt></a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="campaign_delete_cascade_resource.html" title="CampaignDeleteCascadeResource"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../api-reference.html" title="API Reference"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.5.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Customer Panel &mdash; Newfies-Dialer 1.5.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.5.0 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="../user-guide.html" />
+    <link rel="next" title="Configuration and Defaults" href="../configuration-defaults.html" />
+    <link rel="prev" title="Admin Panel" href="admin_panel.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../configuration-defaults.html" title="Configuration and Defaults"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="admin_panel.html" title="Admin Panel"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.5.0 documentation</a> &raquo;</li>
+          <li><a href="../user-guide.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+
+    <div class="section" id="customer-panel">
+<span id="id1"></span><h1>Customer Panel<a class="headerlink" href="#customer-panel" title="Permalink to this headline">¶</a></h1>
+<p>User Interface :</p>
+<p><a class="reference external" href="http://localhost:8000/">http://localhost:8000/</a>
+This application provides a user interface for restricted management of
+the User&#8217;s Campaigns, Phonebooks and Subscribers. It also provides detailed
+reporting of calls and message delivery.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#screenshot-with-features" id="id2">Screenshot with Features</a></li>
+</ul>
+</div>
+<div class="section" id="screenshot-with-features">
+<span id="customer-screenshot-features"></span><h2><a class="toc-backref" href="#id2">Screenshot with Features</a><a class="headerlink" href="#screenshot-with-features" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="index">
+<h3>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
+<p>Index page for the customer interface after successful login with user credentials</p>
+<img alt="../_images/customer_screenshot.png" src="../_images/customer_screenshot.png" style="width: 1000px;" />
+</div>
+<div class="section" id="phonebook">
+<span id="customer-phonebook-access"></span><h3>Phonebook<a class="headerlink" href="#phonebook" title="Permalink to this headline">¶</a></h3>
+<p>The phonebook list will be displayed from the following URL. You can add a new
+phonebook by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">phonebook</span></tt> and add the name of a phonebook and its
+description. Also from the phonebook list, click on the phonebook to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/phonebook/">http://localhost:8000/dialer_campaign/phonebook/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/phonebook_list1.png" src="../_images/phonebook_list1.png" />
+<p>To Add/Update a Phonebook for a logged in user</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/phonebook/add/">http://localhost:8000/dialer_campaign/phonebook/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/phonebook/1/">http://localhost:8000/dialer_campaign/phonebook/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_phonebook1.png" src="../_images/update_phonebook1.png" />
+</div>
+<div class="section" id="contact">
+<span id="customer-contact-access"></span><h3>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h3>
+<p>The contact list will be displayed from following the URL. You can add a new contact
+by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">contact</span></tt> &amp; adding the contact details (i.e. phone number, name,
+description about contact, contact status) under the logged in user&#8217;s phonebook from
+the phonebook list. On the contact list, click on the contact to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/contact/">http://localhost:8000/dialer_campaign/contact/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/contact_list1.png" src="../_images/contact_list1.png" />
+<p>To Add/Update a contact in a phonebook</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/contact/add/">http://localhost:8000/dialer_campaign/contact/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/contact/1/">http://localhost:8000/dialer_campaign/contact/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_contact1.png" src="../_images/update_contact1.png" />
+<p>To import bulk contacts into a phonebook, click on <tt class="docutils literal"><span class="pre">Import</span></tt>.
+where you can upload contacts via a CSV file under a logged in
+user&#8217;s phonebook.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/contact/import/">http://localhost:8000/dialer_campaign/contact/import/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/import_contact1.png" src="../_images/import_contact1.png" />
+<div class="section" id="voice-application">
+<span id="voice-app"></span><h4>Voice Application<a class="headerlink" href="#voice-application" title="Permalink to this headline">¶</a></h4>
+<p>A number of voice applications are provided with Newfies-Dialer. Click <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">Voice</span> <span class="pre">App</span></tt> give the
+voice application a name, select the type of  application from the dropdown, select the gateway
+to use if the call is to be redirected, and provide the data to be used, e.g. in the case of “Speak”
+this would be the words to convert to text to speech.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/voiceapp/">http://localhost:8000/voiceapp/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/voiceapp_list1.png" src="../_images/voiceapp_list1.png" />
+<p>To Add/Update a contact in a voice app</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/voiceapp/add/">http://localhost:8000/voiceapp/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/voiceapp/1/">http://localhost:8000/voiceapp/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_voiceapp1.png" src="../_images/update_voiceapp1.png" />
+<p>A Number of voice applications currently supported are:-</p>
+<p><strong>Dial</strong>:</p>
+<p>The dial command allows the call to be redirected another destination. In this case, Select the B-Leg
+as the trunk to be used for the redirected call.</p>
+<p><strong>Conference</strong>:</p>
+<p>Direct the contact into a conference which has previously been defined in Freeswitch. In the Data
+field, put the name or extension number.</p>
+<p><strong>PlayAudio</strong>:</p>
+<p>PlayAudio plays a sound file that has previously been uploaded to the system.</p>
+<p>The Audio is uploaded via the Audio Files menu on the top menu. Click add, then select the file on
+your computer to be uploaded. The file will be renamed with a unique name. It can be played via the
+web browser.</p>
+<p>In the data field in the voice application, either put the full file path to the sound file.
+Typically this is /usr/share/newfies/usermedia/upload/audiofiles/audio-file-XXXX-12345678.mp3</p>
+<p>However where there are multiple Freeswitch nodes and workers, the sound file can uploaded to
+Newfies-Dialer, and the Web URL placed in the Data field. Typically, this will be</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://domain.tld:8008/mediafiles/upload/audiofiles/-XXXX-12345678.mp3">http://domain.tld:8008/mediafiles/upload/audiofiles/-XXXX-12345678.mp3</a></li>
+</ul>
+</div></blockquote>
+<p>This allows other Freeswitch nodes to download and play the audio file on demand without having to
+upload it to each node.</p>
+<p><strong>Speak</strong>:</p>
+<p>This will call a contact, and then using the text to speech engine, which is Flite as standard,
+play the audio in the Data field.</p>
+<p><strong>Survey</strong>:
+A survey and polling application which is described in more detail in a subsequent section.</p>
+</div>
+<div class="section" id="survey">
+<span id="survey-app"></span><h4>Survey<a class="headerlink" href="#survey" title="Permalink to this headline">¶</a></h4>
+<p>The survey application for Newfies-Dialer allows polls and surveys to be taken over the phone.</p>
+<p>Each contact is called, and then played a sound file. After the sound file is heard, the user can
+enter their answer through the phone keypad using keys 0 to 9.</p>
+<p>Therefore before creating the survey, the first job is to upload the audio for the survey. One audio
+file is required for each question.</p>
+<p><strong>Uploading Audio Files</strong>:</p>
+<p>Select Audio Files from the top menu then click add.</p>
+<p>Enter a name to describe the audio, then click chose file, select the file you require from your
+computer, then click submit.</p>
+<p>Note that only mp3, Wav and ogg formats are supported.</p>
+<p>The audio file will then be uploaded and renamed so that it is unique.</p>
+<p><strong>Create the Survey</strong>:</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/survey/">http://localhost:8000/survey/</a></li>
+<li><a class="reference external" href="http://localhost:8000/survey/add/">http://localhost:8000/survey/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/survey/1/">http://localhost:8000/survey/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/survey_list1.png" src="../_images/survey_list1.png" />
+<p>Select Modules from the top menu, then Survey.</p>
+<p>Click the add button, then give the survey a name and description, then click Submit.</p>
+<p>A button will now appear to add a question.</p>
+<p>In the question field, put in some text to describe the question - e.g &#8220;What is 1+1&#8221;; select the audio
+file pertaining to the question which was uploaded in the previous step.</p>
+<p>If no audio file is selected, then the system will automatically play the text in the question field
+using the text to speech engine.</p>
+<p>Then click Add Response. A further two fields will appear named Key Digit and Key Value. In key Digit
+put a number from 0 to 9 which should be pressed for this answer. In the example &#8220;What is 1+1&#8221;, &#8220;2&#8221;
+should be placed in the Key Digit Field&#8221;</p>
+<p>The Key Value field is used in the survey reports, and so in this case, you would put &#8220;Correct&#8221; as
+1+1=2. You may chose to add responses 0,1 and 3 to 9 as key digits, with key values of &#8220;Wrong&#8221; as
+these answers will then be summed up in the Survey Reports.</p>
+<p>You can then go on to add another question, and its associated responses. On completion, click
+Update Survey.</p>
+<p>To use the Survey in a campaign, simply create a campaign as normal, and select the Survey name in
+the Application drop-down.</p>
+<p><strong>Survey Results</strong></p>
+<p>When the survey is complete, the survey results can be inspected by clicking Reporting on the top
+and selecting Survey Results from the drop-down.</p>
+</div>
+</div>
+<div class="section" id="campaign">
+<span id="customer-campaign-access"></span><h3>Campaign<a class="headerlink" href="#campaign" title="Permalink to this headline">¶</a></h3>
+<p>The campaign list will be displayed from the following URL. You can add a new campaign for
+the logged in user by clicking <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">campaign</span></tt>. When adding a campaign, it is important
+to add the campaign&#8217;s start and end dates with time &amp; week-day exceptions. Select
+the gateway through which calls will be routed &amp; phonebook(s) that are
+linked with contacts from the campaign list, click on campaign to update.</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/campaign/">http://localhost:8000/dialer_campaign/campaign/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/campaign_list1.png" src="../_images/campaign_list1.png" />
+<p>To Add/Update a Campaign for a logged in user</p>
+<p><strong>URL</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/campaign/add/">http://localhost:8000/dialer_campaign/campaign/add/</a></li>
+<li><a class="reference external" href="http://localhost:8000/dialer_campaign/campaign/1/">http://localhost:8000/dialer_campaign/campaign/1/</a></li>
+</ul>
+</div></blockquote>
+<img alt="../_images/update_campaign1.png" src="../_images/update_campaign1.png" />
+<img alt="../_images/update_campaign_part2.png" src="../_images/update_campaign_part2.png" />
+</div>
+<div class="section" id="dashboard">
+<span id="customer-dashboard-access"></span><h3>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Dashboard gives the information anbout campaign &amp; its related call records</p>
+<img alt="../_images/customer_dashboard.png" src="../_images/customer_dashboard.png" />
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/Star2Billing/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="admin_panel.html"
+                        title="previous chapter">Admin Panel</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../configuration-defaults.html"
+                        title="next chapter">Configuration and Defaults</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../configuration-defaults.html" title="Configuration and Defaults"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="admin_panel.html" title="Admin Panel"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.5.0 documentation</a> &raquo;</li>
+          <li><a href="../user-guide.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

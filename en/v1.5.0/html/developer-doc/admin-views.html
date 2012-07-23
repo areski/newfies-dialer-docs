@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Newfies-Dialer Admin Views &mdash; Newfies-Dialer 1.5.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.5.0 documentation" href="../index.html" />
+    <link rel="up" title="Developer doc" href="../developer-doc.html" />
+    <link rel="next" title="Newfies Tasks" href="tasks.html" />
+    <link rel="prev" title="Newfies-Dialer Views" href="views.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tasks.html" title="Newfies Tasks"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="views.html" title="Newfies-Dialer Views"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.5.0 documentation</a> &raquo;</li>
+          <li><a href="../developer-doc.html" accesskey="U">Developer doc</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+
+    <div class="section" id="module-dialer_campaign.admin">
+<span id="newfies-dialer-admin-views"></span><span id="admin-views"></span><h1>Newfies-Dialer Admin Views<a class="headerlink" href="#module-dialer_campaign.admin" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="campaignadmin">
+<span id="id1"></span><h2><a class="reference internal" href="#dialer_campaign.admin.CampaignAdmin" title="dialer_campaign.admin.CampaignAdmin"><tt class="xref py py-class docutils literal"><span class="pre">CampaignAdmin</span></tt></a><a class="headerlink" href="#campaignadmin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_campaign.admin.CampaignAdmin">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.admin.</tt><tt class="descname">CampaignAdmin</tt><big>(</big><em>model</em>, <em>admin_site</em><big>)</big><a class="headerlink" href="#dialer_campaign.admin.CampaignAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to view and modify certain attributes
+of a Campaign.</p>
+<dl class="method">
+<dt id="dialer_campaign.admin.CampaignAdmin.add_view">
+<tt class="descname">add_view</tt><big>(</big><em>request</em>, <em>extra_context=None</em><big>)</big><a class="headerlink" href="#dialer_campaign.admin.CampaignAdmin.add_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override django add_view method for checking the dialer setting limit</p>
+<p><strong>Logic Description</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Before adding campaign, check dialer setting limit if applicable
+to the user, if matched then the user will be redirected to
+the campaign list</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="phonebookadmin">
+<span id="id2"></span><h2><a class="reference internal" href="#dialer_campaign.admin.PhonebookAdmin" title="dialer_campaign.admin.PhonebookAdmin"><tt class="xref py py-class docutils literal"><span class="pre">PhonebookAdmin</span></tt></a><a class="headerlink" href="#phonebookadmin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_campaign.admin.PhonebookAdmin">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.admin.</tt><tt class="descname">PhonebookAdmin</tt><big>(</big><em>model</em>, <em>admin_site</em><big>)</big><a class="headerlink" href="#dialer_campaign.admin.PhonebookAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to view and modify certain attributes
+of a Phonebook.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="contactadmin">
+<span id="id3"></span><h2><a class="reference internal" href="#dialer_campaign.admin.ContactAdmin" title="dialer_campaign.admin.ContactAdmin"><tt class="xref py py-class docutils literal"><span class="pre">ContactAdmin</span></tt></a><a class="headerlink" href="#contactadmin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_campaign.admin.ContactAdmin">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.admin.</tt><tt class="descname">ContactAdmin</tt><big>(</big><em>model</em>, <em>admin_site</em><big>)</big><a class="headerlink" href="#dialer_campaign.admin.ContactAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to view and modify certain attributes
+of a Contact.</p>
+<dl class="method">
+<dt id="dialer_campaign.admin.ContactAdmin.add_view">
+<tt class="descname">add_view</tt><big>(</big><em>request</em>, <em>extra_context=None</em><big>)</big><a class="headerlink" href="#dialer_campaign.admin.ContactAdmin.add_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override django admin add_view method for checking the dialer
+setting limit</p>
+<p><strong>Logic Description</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Before adding a contact, check the dialer setting limit if
+applicable to the user. If matched, the user will be
+redirected to the contact list</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_campaign.admin.ContactAdmin.import_contact">
+<tt class="descname">import_contact</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#dialer_campaign.admin.ContactAdmin.import_contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add custom method in django admin view to import CSV file of
+Contacts</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">form</span></tt> - Contact_fileImport</li>
+<li><tt class="docutils literal"><span class="pre">template</span></tt> - admin/dialer_campaign/contact/import_contact.html</li>
+</ul>
+</div></blockquote>
+<p><strong>Logic Description</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Before adding contact, check the dialer setting limit if
+applicable to the user.</li>
+<li>Add a new contact which will belong to the logged in user
+via csv file &amp; get the result (Upload success &amp; failure
+statistics)</li>
+</ul>
+</div></blockquote>
+<p><strong>Important variable</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>total_rows - Total no. of records in the CSV file</li>
+<li>retail_record_count - No. of records which are imported from
+The CSV file</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="campaignsubscriberadmin">
+<span id="id4"></span><h2><a class="reference internal" href="#dialer_campaign.admin.CampaignSubscriberAdmin" title="dialer_campaign.admin.CampaignSubscriberAdmin"><tt class="xref py py-class docutils literal"><span class="pre">CampaignSubscriberAdmin</span></tt></a><a class="headerlink" href="#campaignsubscriberadmin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_campaign.admin.CampaignSubscriberAdmin">
+<em class="property">class </em><tt class="descclassname">dialer_campaign.admin.</tt><tt class="descname">CampaignSubscriberAdmin</tt><big>(</big><em>model</em>, <em>admin_site</em><big>)</big><a class="headerlink" href="#dialer_campaign.admin.CampaignSubscriberAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to view and modify certain attributes
+of a CampaignSubscriber.</p>
+</dd></dl>
+
+<span class="target" id="module-dialer_cdr.admin"></span></div>
+<div class="section" id="callrequestadmin">
+<span id="id5"></span><h2><a class="reference internal" href="#dialer_cdr.admin.CallrequestAdmin" title="dialer_cdr.admin.CallrequestAdmin"><tt class="xref py py-class docutils literal"><span class="pre">CallrequestAdmin</span></tt></a><a class="headerlink" href="#callrequestadmin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_cdr.admin.CallrequestAdmin">
+<em class="property">class </em><tt class="descclassname">dialer_cdr.admin.</tt><tt class="descname">CallrequestAdmin</tt><big>(</big><em>model</em>, <em>admin_site</em><big>)</big><a class="headerlink" href="#dialer_cdr.admin.CallrequestAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to view and modify certain attributes
+of a Callrequest.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="voipcalladmin">
+<span id="id6"></span><h2><a class="reference internal" href="#dialer_cdr.admin.VoIPCallAdmin" title="dialer_cdr.admin.VoIPCallAdmin"><tt class="xref py py-class docutils literal"><span class="pre">VoIPCallAdmin</span></tt></a><a class="headerlink" href="#voipcalladmin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_cdr.admin.VoIPCallAdmin">
+<em class="property">class </em><tt class="descclassname">dialer_cdr.admin.</tt><tt class="descname">VoIPCallAdmin</tt><big>(</big><em>model</em>, <em>admin_site</em><big>)</big><a class="headerlink" href="#dialer_cdr.admin.VoIPCallAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to view and modify certain attributes
+of a VoIPCall.</p>
+<dl class="method">
+<dt id="dialer_cdr.admin.VoIPCallAdmin.changelist_view">
+<tt class="descname">changelist_view</tt><big>(</big><em>request</em>, <em>extra_context=None</em><big>)</big><a class="headerlink" href="#dialer_cdr.admin.VoIPCallAdmin.changelist_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override changelist_view method of django-admin for search parameters</p>
+<p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">form</span></tt> - VoipSearchForm</li>
+<li><tt class="docutils literal"><span class="pre">template</span></tt> - admin/dialer_cdr/voipcall/change_list.html</li>
+</ul>
+</div></blockquote>
+<p><strong>Logic Description</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>VoIP report Record Listing with search option &amp; Daily Call Report
+search Parameters: by date, by status and by billed.</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_cdr.admin.VoIPCallAdmin.export_voip_report">
+<tt class="descname">export_voip_report</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#dialer_cdr.admin.VoIPCallAdmin.export_voip_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a CSV file of VoIP call records</p>
+<p><strong>Important variable</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>request.session[&#8216;admin_voipcall_record_qs&#8217;] - stores voipcall query set</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt><strong>Exported fields</strong>: [user, callid, callerid, phone_number,</dt>
+<dd>starting_date, duration, disposition,
+used_gateway]</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_cdr.admin.VoIPCallAdmin.has_add_permission">
+<tt class="descname">has_add_permission</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#dialer_cdr.admin.VoIPCallAdmin.has_add_permission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove add permission on VoIP Call Report model</p>
+<p><strong>Logic Description</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Override django admin has_add_permission method to remove add
+permission on VoIP Call Report model</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_cdr.admin.VoIPCallAdmin.used_gateway_link">
+<tt class="descname">used_gateway_link</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#dialer_cdr.admin.VoIPCallAdmin.used_gateway_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used gateway link to edit gateway detail</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_cdr.admin.VoIPCallAdmin.user_link">
+<tt class="descname">user_link</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#dialer_cdr.admin.VoIPCallAdmin.user_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>User link to user profile</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-dialer_gateway.admin"></span></div>
+<div class="section" id="gatewayadmin">
+<span id="id7"></span><h2><a class="reference internal" href="#dialer_gateway.admin.GatewayAdmin" title="dialer_gateway.admin.GatewayAdmin"><tt class="xref py py-class docutils literal"><span class="pre">GatewayAdmin</span></tt></a><a class="headerlink" href="#gatewayadmin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_gateway.admin.GatewayAdmin">
+<em class="property">class </em><tt class="descclassname">dialer_gateway.admin.</tt><tt class="descname">GatewayAdmin</tt><big>(</big><em>model</em>, <em>admin_site</em><big>)</big><a class="headerlink" href="#dialer_gateway.admin.GatewayAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to view and modify certain attributes
+of a Gateway.</p>
+</dd></dl>
+
+<span class="target" id="module-dialer_settings.admin"></span></div>
+<div class="section" id="dialersettingadmin">
+<span id="id8"></span><h2><a class="reference internal" href="#dialer_settings.admin.DialerSettingAdmin" title="dialer_settings.admin.DialerSettingAdmin"><tt class="xref py py-class docutils literal"><span class="pre">DialerSettingAdmin</span></tt></a><a class="headerlink" href="#dialersettingadmin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dialer_settings.admin.DialerSettingAdmin">
+<em class="property">class </em><tt class="descclassname">dialer_settings.admin.</tt><tt class="descname">DialerSettingAdmin</tt><big>(</big><em>model</em>, <em>admin_site</em><big>)</big><a class="headerlink" href="#dialer_settings.admin.DialerSettingAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to view and modify certain attributes
+of a DialerSetting.</p>
+<dl class="method">
+<dt id="dialer_settings.admin.DialerSettingAdmin.add_view">
+<tt class="descname">add_view</tt><big>(</big><em>request</em>, <em>extra_context=None</em><big>)</big><a class="headerlink" href="#dialer_settings.admin.DialerSettingAdmin.add_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add Dialer setting</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_settings.admin.DialerSettingAdmin.change_view">
+<tt class="descname">change_view</tt><big>(</big><em>request</em>, <em>object_id</em>, <em>extra_context=None</em><big>)</big><a class="headerlink" href="#dialer_settings.admin.DialerSettingAdmin.change_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edit dialer settings</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialer_settings.admin.DialerSettingAdmin.changelist_view">
+<tt class="descname">changelist_view</tt><big>(</big><em>request</em>, <em>extra_context=None</em><big>)</big><a class="headerlink" href="#dialer_settings.admin.DialerSettingAdmin.changelist_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dialer setting list</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-survey.admin"></span></div>
+<div class="section" id="surveyappadmin">
+<span id="id9"></span><h2><a class="reference internal" href="#survey.admin.SurveyAppAdmin" title="survey.admin.SurveyAppAdmin"><tt class="xref py py-class docutils literal"><span class="pre">SurveyAppAdmin</span></tt></a><a class="headerlink" href="#surveyappadmin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="survey.admin.SurveyAppAdmin">
+<em class="property">class </em><tt class="descclassname">survey.admin.</tt><tt class="descname">SurveyAppAdmin</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#survey.admin.SurveyAppAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to view and modify survey.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="surveyquestionadmin">
+<span id="id10"></span><h2><a class="reference internal" href="#survey.admin.SurveyQuestionAdmin" title="survey.admin.SurveyQuestionAdmin"><tt class="xref py py-class docutils literal"><span class="pre">SurveyQuestionAdmin</span></tt></a><a class="headerlink" href="#surveyquestionadmin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="survey.admin.SurveyQuestionAdmin">
+<em class="property">class </em><tt class="descclassname">survey.admin.</tt><tt class="descname">SurveyQuestionAdmin</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#survey.admin.SurveyQuestionAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to view and modify survey question.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="surveyresponseadmin">
+<span id="id11"></span><h2><a class="reference internal" href="#survey.admin.SurveyResponseAdmin" title="survey.admin.SurveyResponseAdmin"><tt class="xref py py-class docutils literal"><span class="pre">SurveyResponseAdmin</span></tt></a><a class="headerlink" href="#surveyresponseadmin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="survey.admin.SurveyResponseAdmin">
+<em class="property">class </em><tt class="descclassname">survey.admin.</tt><tt class="descname">SurveyResponseAdmin</tt><big>(</big><em>model</em>, <em>admin_site</em><big>)</big><a class="headerlink" href="#survey.admin.SurveyResponseAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to view and modify attributes
+of a survey response.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="surveycampaignresultadmin">
+<span id="id12"></span><h2><a class="reference internal" href="#survey.admin.SurveyCampaignResultAdmin" title="survey.admin.SurveyCampaignResultAdmin"><tt class="xref py py-class docutils literal"><span class="pre">SurveyCampaignResultAdmin</span></tt></a><a class="headerlink" href="#surveycampaignresultadmin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="survey.admin.SurveyCampaignResultAdmin">
+<em class="property">class </em><tt class="descclassname">survey.admin.</tt><tt class="descname">SurveyCampaignResultAdmin</tt><big>(</big><em>model</em>, <em>admin_site</em><big>)</big><a class="headerlink" href="#survey.admin.SurveyCampaignResultAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to view and modify survey campaign result.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/Star2Billing/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="views.html"
+                        title="previous chapter">Newfies-Dialer Views</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tasks.html"
+                        title="next chapter">Newfies Tasks</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tasks.html" title="Newfies Tasks"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="views.html" title="Newfies-Dialer Views"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.5.0 documentation</a> &raquo;</li>
+          <li><a href="../developer-doc.html" >Developer doc</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>

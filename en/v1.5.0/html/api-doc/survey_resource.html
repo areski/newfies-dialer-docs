@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SurveyAppResource &mdash; Newfies-Dialer 1.5.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/newfies-dialer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Newfies-Dialer 1.5.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="../api-reference.html" />
+    <link rel="next" title="SurveyQuestionResource" href="survey_question_resource.html" />
+    <link rel="prev" title="HangupcallResource" href="hangupcall_resource.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="survey_question_resource.html" title="SurveyQuestionResource"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="hangupcall_resource.html" title="HangupcallResource"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.5.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+
+    <span class="target" id="module-survey.api.survey_api"></span><div class="section" id="surveyappresource">
+<span id="surveyappresource-model"></span><h1><a class="reference internal" href="#survey.api.survey_api.SurveyAppResource" title="survey.api.survey_api.SurveyAppResource"><tt class="xref py py-class docutils literal"><span class="pre">SurveyAppResource</span></tt></a><a class="headerlink" href="#surveyappresource" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="survey.api.survey_api.SurveyAppResource">
+<em class="property">class </em><tt class="descclassname">survey.api.survey_api.</tt><tt class="descname">SurveyAppResource</tt><big>(</big><em>api_name=None</em><big>)</big><a class="headerlink" href="#survey.api.survey_api.SurveyAppResource" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Attributes</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">name</span></tt> - survey name</li>
+<li><tt class="docutils literal"><span class="pre">description</span></tt> -</li>
+<li><tt class="docutils literal"><span class="pre">user_id</span></tt> - User ID</li>
+</ul>
+</div></blockquote>
+<p><strong>Validation</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>SurveyAppValidation()</li>
+</ul>
+</div></blockquote>
+<p><strong>Create</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password --dump-header - -H "Content-Type:application/json" -X POST --data '{"name": "surveyname", "description": ""}' http://localhost:8000/api/v1/survey/</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><pre>HTTP/1.0 201 CREATED
+Date: Fri, 23 Sep 2011 06:08:34 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Type: text/html; charset=utf-8
+Location: http://localhost:8000/api/v1/survey/1/
+Content-Language: en-us</pre>
+</div>
+</div></blockquote>
+<p><strong>Read</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password -H 'Accept: application/json' http://localhost:8000/api/v1/survey/?format=json</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+   <span class="s">&quot;meta&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;limit&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+      <span class="s">&quot;next&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;offset&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+      <span class="s">&quot;previous&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+      <span class="s">&quot;total_count&quot;</span><span class="p">:</span><span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="s">&quot;objects&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">&quot;created_date&quot;</span><span class="p">:</span><span class="s">&quot;2011-04-08T07:55:05&quot;</span><span class="p">,</span>
+         <span class="s">&quot;description&quot;</span><span class="p">:</span><span class="s">&quot;This is default phone book&quot;</span><span class="p">,</span>
+         <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+         <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;survey name&quot;</span><span class="p">,</span>
+         <span class="s">&quot;resource_uri&quot;</span><span class="p">:</span><span class="s">&quot;/api/v1/survey/1/&quot;</span><span class="p">,</span>
+         <span class="s">&quot;updated_date&quot;</span><span class="p">:</span><span class="s">&quot;2011-04-08T07:55:05&quot;</span><span class="p">,</span>
+         <span class="s">&quot;user&quot;</span><span class="p">:{</span>
+            <span class="s">&quot;first_name&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;1&quot;</span><span class="p">,</span>
+            <span class="s">&quot;last_login&quot;</span><span class="p">:</span><span class="s">&quot;2011-10-11T01:03:42&quot;</span><span class="p">,</span>
+            <span class="s">&quot;last_name&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+            <span class="s">&quot;resource_uri&quot;</span><span class="p">:</span><span class="s">&quot;/api/v1/user/1/&quot;</span><span class="p">,</span>
+            <span class="s">&quot;username&quot;</span><span class="p">:</span><span class="s">&quot;areski&quot;</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Update</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password --dump-header - -H "Content-Type: application/json" -X PUT --data '{"name": "survey name", "description": ""}' http://localhost:8000/api/v1/survey/%survey_id%/</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><pre>HTTP/1.0 204 NO CONTENT
+Date: Fri, 23 Sep 2011 06:46:12 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Length: 0
+Content-Type: text/html; charset=utf-8
+Content-Language: en-us</pre>
+</div>
+</div></blockquote>
+<p><strong>Delete</strong>:</p>
+<blockquote>
+<div><p>CURL Usage:</p>
+<div class="highlight-python"><pre>curl -u username:password --dump-header - -H "Content-Type: application/json" -X DELETE  http://localhost:8000/api/v1/survey/%survey_id%/
+
+curl -u username:password --dump-header - -H "Content-Type: application/json" -X DELETE  http://localhost:8000/api/v1/survey/</pre>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><pre>HTTP/1.0 204 NO CONTENT
+Date: Fri, 23 Sep 2011 06:48:03 GMT
+Server: WSGIServer/0.1 Python/2.7.1+
+Vary: Accept-Language, Cookie
+Content-Length: 0
+Content-Type: text/html; charset=utf-8
+Content-Language: en-us</pre>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="../index.html">
+  <img class="logo" src="https://github.com/Star2Billing/newfies-dialer/raw/develop/newfies/resources/images/newfies-dialer-180.png" alt="Logo"/>
+</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="hangupcall_resource.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">HangupcallResource</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="survey_question_resource.html"
+                        title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">SurveyQuestionResource</span></tt></a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="survey_question_resource.html" title="SurveyQuestionResource"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="hangupcall_resource.html" title="HangupcallResource"
+             >previous</a> |</li>
+        <li><a href="../index.html">Newfies-Dialer 1.5.0 documentation</a> &raquo;</li>
+          <li><a href="../api-reference.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Arezqui Belaid &lt;info@star2billing.com&gt;.
+    </div>
+  </body>
+</html>
